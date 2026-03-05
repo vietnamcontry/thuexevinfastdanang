@@ -1,0 +1,2146 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="theme-color" content="#0033A0">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <title>VinFast Đà Nẵng - Thuê Xe Điện Tự Lái</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --vinfast-blue: #0033A0;
+            --vinfast-red: #E31937;
+            --dark: #1a1a1a;
+            --light: #f8f9fa;
+            --gradient: linear-gradient(135deg, #0033A0 0%, #0052cc 100%);
+            --safe-bottom: env(safe-area-inset-bottom, 0px);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            line-height: 1.6;
+            color: var(--dark);
+            background: #f5f5f5;
+            overflow-x: hidden;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        /* ============================================
+           DESKTOP HEADER (default)
+           ============================================ */
+        .desktop-header {
+            background: rgba(255,255,255,0.95);
+            backdrop-filter: blur(10px);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 20px rgba(0,0,0,0.1);
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-weight: 800;
+            font-size: 1.5rem;
+            color: var(--vinfast-blue);
+        }
+
+            .logo i {
+                color: var(--vinfast-red);
+                font-size: 2rem;
+            }
+
+        .logo-text-desktop {
+            display: flex;
+            flex-direction: column;
+        }
+
+            .logo-text-desktop div:first-child {
+                font-size: 1.2rem;
+            }
+
+            .logo-text-desktop div:last-child {
+                font-size: 0.7rem;
+                color: var(--vinfast-red);
+            }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: var(--dark);
+            font-weight: 600;
+            transition: color 0.3s;
+            position: relative;
+        }
+
+            nav a:hover {
+                color: var(--vinfast-blue);
+            }
+
+            nav a::after {
+                content: '';
+                position: absolute;
+                bottom: -5px;
+                left: 0;
+                width: 0;
+                height: 2px;
+                background: var(--vinfast-red);
+                transition: width 0.3s;
+            }
+
+            nav a:hover::after {
+                width: 100%;
+            }
+
+        .hotline-desktop {
+            background: var(--vinfast-red);
+            color: white;
+            padding: 0.8rem 1.5rem;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            animation: pulse 2s infinite;
+        }
+
+        /* ============================================
+           MOBILE HEADER
+           ============================================ */
+        .mobile-header {
+            display: none;
+            background: linear-gradient(135deg, var(--vinfast-blue) 0%, #0052cc 100%);
+            color: white;
+            padding: 12px 16px;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 20px rgba(0,0,0,0.2);
+        }
+
+        .header-top {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 8px;
+        }
+
+        .logo-mobile {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+            .logo-mobile i {
+                font-size: 24px;
+                color: var(--vinfast-red);
+            }
+
+        .logo-text {
+            font-weight: 800;
+            font-size: 18px;
+            line-height: 1.2;
+        }
+
+            .logo-text span {
+                display: block;
+                font-size: 11px;
+                color: rgba(255,255,255,0.9);
+                font-weight: 600;
+            }
+
+        .header-call {
+            background: var(--vinfast-red);
+            color: white;
+            width: 44px;
+            height: 44px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            animation: pulse 2s infinite;
+            box-shadow: 0 4px 15px rgba(227,25,55,0.4);
+        }
+
+        .quick-info {
+            display: flex;
+            gap: 15px;
+            font-size: 11px;
+            opacity: 0.9;
+        }
+
+            .quick-info span {
+                display: flex;
+                align-items: center;
+                gap: 4px;
+            }
+
+        @keyframes pulse {
+            0%, 100% {
+                transform: scale(1);
+            }
+
+            50% {
+                transform: scale(1.05);
+            }
+        }
+
+        /* ============================================
+           HERO SECTION
+           ============================================ */
+        .hero {
+            margin-top: 80px;
+            background: linear-gradient(rgba(0,51,160,0.8), rgba(0,51,160,0.9)), url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 600"><rect fill="%230033A0" width="1200" height="600"/><path fill="%230052cc" d="M0 300L50 325L100 300L150 275L200 300L250 325L300 300L350 275L400 300L450 325L500 300L550 275L600 300L650 325L700 300L750 275L800 300L850 325L900 300L950 275L1000 300L1050 325L1100 300L1150 275L1200 300V600H0V300Z"/></svg>');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            padding: 6rem 2rem;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+            .hero::before {
+                content: '';
+                position: absolute;
+                top: -50%;
+                left: -50%;
+                width: 200%;
+                height: 200%;
+                background: radial-gradient(circle, rgba(255,255,255,0.1) 1px, transparent 1px);
+                background-size: 50px 50px;
+                animation: moveGrid 20s linear infinite;
+            }
+
+        @keyframes moveGrid {
+            0% {
+                transform: translate(0,0);
+            }
+
+            100% {
+                transform: translate(50px,50px);
+            }
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            font-weight: 800;
+            margin-bottom: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+            .hero h1 span {
+                color: var(--vinfast-red);
+            }
+
+        .hero p {
+            font-size: 1.3rem;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+        }
+
+        .hero-badges {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-top: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .badge {
+            background: rgba(255,255,255,0.2);
+            backdrop-filter: blur(10px);
+            padding: 1rem 2rem;
+            border-radius: 50px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-weight: 600;
+        }
+
+        .cta-button {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: var(--vinfast-red);
+            color: white;
+            padding: 1.2rem 3rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 1.1rem;
+            margin-top: 2rem;
+            transition: all 0.3s;
+            box-shadow: 0 10px 30px rgba(227,25,55,0.3);
+        }
+
+            .cta-button:hover {
+                transform: translateY(-3px);
+                box-shadow: 0 15px 40px rgba(227,25,55,0.4);
+            }
+
+        /* ============================================
+           SECTION COMMON
+           ============================================ */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+            .section-title h2 {
+                font-size: 2.5rem;
+                color: var(--vinfast-blue);
+                margin-bottom: 1rem;
+            }
+
+            .section-title p {
+                color: #666;
+                font-size: 1.1rem;
+            }
+
+        /* ============================================
+           FLEET SECTION
+           ============================================ */
+        .fleet {
+            padding: 5rem 2rem;
+            background: var(--light);
+        }
+
+        .cars-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .car-card {
+            background: white;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+            transition: all 0.3s;
+            position: relative;
+        }
+
+            .car-card:hover {
+                transform: translateY(-10px);
+                box-shadow: 0 20px 60px rgba(0,0,0,0.15);
+            }
+
+        .car-image {
+            height: 200px;
+            background: linear-gradient(135deg, #f5f5f5 0%, #e0e0e0 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+            .car-image::before {
+                content: '';
+                position: absolute;
+                width: 150%;
+                height: 150%;
+                background: radial-gradient(circle, rgba(0,51,160,0.1) 0%, transparent 70%);
+            }
+
+        .car-icon {
+            font-size: 5rem;
+            color: var(--vinfast-blue);
+            z-index: 1;
+        }
+
+        .car-badge {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            background: var(--vinfast-red);
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 700;
+        }
+
+        .car-info {
+            padding: 1.5rem;
+        }
+
+            .car-info h3 {
+                font-size: 1.5rem;
+                margin-bottom: 0.5rem;
+                color: var(--dark);
+            }
+
+        .car-specs {
+            display: flex;
+            gap: 1rem;
+            margin: 1rem 0;
+            font-size: 0.9rem;
+            color: #666;
+        }
+
+            .car-specs span {
+                display: flex;
+                align-items: center;
+                gap: 5px;
+            }
+
+        .car-price {
+            display: flex;
+            align-items: baseline;
+            gap: 5px;
+            margin: 1rem 0;
+        }
+
+        .price {
+            font-size: 2rem;
+            font-weight: 800;
+            color: var(--vinfast-red);
+        }
+
+        .period {
+            color: #666;
+        }
+
+        .book-btn {
+            width: 100%;
+            background: var(--vinfast-blue);
+            color: white;
+            border: none;
+            padding: 1rem;
+            border-radius: 10px;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.3s;
+            font-size: 1rem;
+        }
+
+            .book-btn:hover {
+                background: var(--vinfast-red);
+            }
+
+        /* ============================================
+           PRICING SECTION
+           ============================================ */
+        .pricing {
+            padding: 5rem 2rem;
+            background: white;
+        }
+
+        .pricing-tabs {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin-bottom: 3rem;
+            flex-wrap: wrap;
+        }
+
+        .tab-btn {
+            padding: 1rem 2rem;
+            border: 2px solid var(--vinfast-blue);
+            background: transparent;
+            color: var(--vinfast-blue);
+            border-radius: 30px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+            .tab-btn.active, .tab-btn:hover {
+                background: var(--vinfast-blue);
+                color: white;
+            }
+
+        .pricing-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+
+        .pricing-card {
+            background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
+            border: 2px solid #e0e0e0;
+            border-radius: 20px;
+            padding: 2rem;
+            text-align: center;
+            transition: all 0.3s;
+            position: relative;
+        }
+
+            .pricing-card.featured {
+                border-color: var(--vinfast-red);
+                transform: scale(1.05);
+                box-shadow: 0 20px 60px rgba(227,25,55,0.2);
+            }
+
+                .pricing-card.featured::before {
+                    content: 'Phổ biến nhất';
+                    position: absolute;
+                    top: -12px;
+                    left: 50%;
+                    transform: translateX(-50%);
+                    background: var(--vinfast-red);
+                    color: white;
+                    padding: 0.3rem 1rem;
+                    border-radius: 20px;
+                    font-size: 0.8rem;
+                    font-weight: 700;
+                }
+
+            .pricing-card h3 {
+                font-size: 1.3rem;
+                margin-bottom: 1rem;
+                color: var(--vinfast-blue);
+            }
+
+        .price-tag {
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: var(--vinfast-red);
+            margin: 1rem 0;
+        }
+
+            .price-tag span {
+                font-size: 1rem;
+                color: #666;
+                font-weight: 400;
+            }
+
+        .features {
+            list-style: none;
+            margin: 1.5rem 0;
+            text-align: left;
+        }
+
+            .features li {
+                padding: 0.5rem 0;
+                border-bottom: 1px solid #eee;
+                display: flex;
+                align-items: center;
+                gap: 10px;
+            }
+
+                .features li:last-child {
+                    border-bottom: none;
+                }
+
+            .features i {
+                color: #28a745;
+            }
+
+        /* ============================================
+           LOCATION SECTION
+           ============================================ */
+        .location {
+            padding: 5rem 2rem;
+            background: var(--vinfast-blue);
+            color: white;
+        }
+
+        .location-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: center;
+        }
+
+        .location-info h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .location-info p {
+            margin-bottom: 1rem;
+            opacity: 0.9;
+            font-size: 1.1rem;
+        }
+
+        .location-features {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+            margin-top: 2rem;
+        }
+
+        .location-feature {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            background: rgba(255,255,255,0.1);
+            padding: 1rem;
+            border-radius: 10px;
+            backdrop-filter: blur(10px);
+        }
+
+        .map-container {
+            background: rgba(255,255,255,0.1);
+            border-radius: 20px;
+            height: 400px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            backdrop-filter: blur(10px);
+            border: 2px solid rgba(255,255,255,0.2);
+            overflow: hidden;
+        }
+
+            .map-container iframe {
+                width: 100%;
+                height: 100%;
+                border: 0;
+                border-radius: 20px;
+            }
+
+        /* ============================================
+           BOOKING SECTION
+           ============================================ */
+        .booking {
+            padding: 5rem 2rem;
+            background: var(--light);
+        }
+
+        .booking-form {
+            max-width: 800px;
+            margin: 0 auto;
+            background: white;
+            padding: 3rem;
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.1);
+        }
+
+        .form-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.5rem;
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+            .form-group.full-width {
+                grid-column: 1 / -1;
+            }
+
+            .form-group label {
+                display: block;
+                margin-bottom: 0.5rem;
+                font-weight: 600;
+                color: var(--dark);
+            }
+
+            .form-group input,
+            .form-group select,
+            .form-group textarea {
+                width: 100%;
+                padding: 1rem;
+                border: 2px solid #e0e0e0;
+                border-radius: 10px;
+                font-family: inherit;
+                font-size: 15px;
+                transition: all 0.3s;
+            }
+
+                .form-group input:focus,
+                .form-group select:focus,
+                .form-group textarea:focus {
+                    outline: none;
+                    border-color: var(--vinfast-blue);
+                    box-shadow: 0 0 0 3px rgba(0,51,160,0.1);
+                }
+
+        .submit-btn {
+            width: 100%;
+            background: var(--vinfast-red);
+            color: white;
+            border: none;
+            padding: 1.2rem;
+            border-radius: 10px;
+            font-size: 1.1rem;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.3s;
+            grid-column: 1 / -1;
+            position: relative;
+        }
+
+            .submit-btn:hover {
+                background: #c41230;
+                transform: translateY(-2px);
+            }
+
+            .submit-btn:disabled {
+                background: #ccc;
+                cursor: not-allowed;
+                transform: none;
+            }
+
+            .submit-btn.loading::after {
+                content: '';
+                position: absolute;
+                width: 20px;
+                height: 20px;
+                border: 3px solid white;
+                border-top-color: transparent;
+                border-radius: 50%;
+                animation: spin 1s linear infinite;
+                right: 20px;
+                top: 50%;
+                transform: translateY(-50%);
+            }
+
+        @keyframes spin {
+            to {
+                transform: translateY(-50%) rotate(360deg);
+            }
+        }
+
+        /* Success Message */
+        .success-message {
+            display: none;
+            background: #28a745;
+            color: white;
+            padding: 2rem;
+            border-radius: 15px;
+            text-align: center;
+            margin-top: 1rem;
+        }
+
+            .success-message.show {
+                display: block;
+                animation: slideIn 0.5s ease;
+            }
+
+        @keyframes slideIn {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .success-message i {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        /* ============================================
+           FOOTER
+           ============================================ */
+        footer {
+            background: var(--dark);
+            color: white;
+            padding: 3rem 2rem 1rem;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .footer-section h3 {
+            color: var(--vinfast-red);
+            margin-bottom: 1rem;
+        }
+
+        .footer-section p,
+        .footer-section a {
+            color: #aaa;
+            text-decoration: none;
+            line-height: 2;
+            transition: color 0.3s;
+        }
+
+            .footer-section a:hover {
+                color: white;
+            }
+
+        .social-links {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+
+            .social-links a {
+                width: 40px;
+                height: 40px;
+                background: rgba(255,255,255,0.1);
+                border-radius: 50%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                transition: all 0.3s;
+            }
+
+                .social-links a:hover {
+                    background: var(--vinfast-red);
+                    transform: translateY(-3px);
+                }
+
+        .footer-bottom {
+            text-align: center;
+            margin-top: 2rem;
+            padding-top: 2rem;
+            border-top: 1px solid #333;
+            color: #666;
+        }
+
+        /* ============================================
+           FLOATING BUTTONS
+           ============================================ */
+        .floating-buttons {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            z-index: 9999;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            align-items: flex-end;
+        }
+
+        .floating-btn {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            text-decoration: none;
+            box-shadow: 0 6px 20px rgba(0,0,0,0.3);
+            transition: all 0.3s;
+            position: relative;
+            overflow: hidden;
+        }
+
+            .floating-btn:hover {
+                transform: scale(1.1);
+                box-shadow: 0 10px 30px rgba(0,0,0,0.4);
+            }
+
+        .zalo-btn {
+            background: #0068FF;
+            animation: zalo-pulse 2s infinite;
+        }
+
+            .zalo-btn img {
+                width: 70%;
+                height: 70%;
+                object-fit: contain;
+                filter: brightness(0) invert(1);
+            }
+
+        .messenger-btn {
+            background: linear-gradient(135deg, #0099FF 0%, #A033FF 50%, #FF5C87 100%);
+            animation: messenger-pulse 2s infinite;
+        }
+
+        .phone-btn {
+            background: #10B981;
+            animation: phone-pulse 2s infinite;
+        }
+
+        @keyframes zalo-pulse {
+            0%,100% {
+                box-shadow: 0 0 0 0 rgba(0,104,255,0.7);
+            }
+
+            70% {
+                box-shadow: 0 0 0 15px rgba(0,104,255,0);
+            }
+        }
+
+        @keyframes messenger-pulse {
+            0%,100% {
+                box-shadow: 0 0 0 0 rgba(0,153,255,0.7);
+            }
+
+            70% {
+                box-shadow: 0 0 0 15px rgba(0,153,255,0);
+            }
+        }
+
+        @keyframes phone-pulse {
+            0%,100% {
+                box-shadow: 0 0 0 0 rgba(16,185,129,0.7);
+            }
+
+            70% {
+                box-shadow: 0 0 0 15px rgba(16,185,129,0);
+            }
+        }
+
+        .floating-btn::before {
+            content: attr(data-tooltip);
+            position: absolute;
+            right: 70px;
+            background: #1e293b;
+            color: #fff;
+            padding: 8px 16px;
+            border-radius: 8px;
+            font-size: 14px;
+            font-weight: 600;
+            white-space: nowrap;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+        }
+
+        .floating-btn::after {
+            content: '';
+            position: absolute;
+            right: 60px;
+            border: 6px solid transparent;
+            border-left-color: #1e293b;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s;
+        }
+
+        .floating-btn:hover::before,
+        .floating-btn:hover::after {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        /* ============================================
+           BOTTOM NAV (Mobile)
+           ============================================ */
+        .bottom-nav {
+            display: none;
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: white;
+            padding: 8px 16px calc(8px + var(--safe-bottom));
+            box-shadow: 0 -4px 20px rgba(0,0,0,0.1);
+            justify-content: space-around;
+            align-items: center;
+            z-index: 1000;
+        }
+
+        .nav-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 4px;
+            text-decoration: none;
+            color: #666;
+            font-size: 11px;
+            font-weight: 600;
+            padding: 4px 12px;
+            border-radius: 12px;
+            transition: all 0.3s;
+        }
+
+            .nav-item i {
+                font-size: 20px;
+            }
+
+            .nav-item.active {
+                color: var(--vinfast-blue);
+                background: rgba(0,51,160,0.1);
+            }
+
+            .nav-item.book-now {
+                background: var(--vinfast-red);
+                color: white;
+                padding: 12px 24px;
+                margin: -8px 0;
+                box-shadow: 0 4px 15px rgba(227,25,55,0.4);
+            }
+
+        /* ============================================
+           MOBILE SPECIFIC ELEMENTS
+           ============================================ */
+        .mobile-only {
+            display: none;
+        }
+
+        .stats-bar {
+            display: none;
+            background: linear-gradient(135deg, var(--vinfast-blue) 0%, #0052cc 100%);
+            color: white;
+            margin: 12px;
+            border-radius: 16px;
+            padding: 16px;
+            justify-content: space-around;
+        }
+
+        .stat-item {
+            text-align: center;
+        }
+
+        .stat-number {
+            font-size: 24px;
+            font-weight: 800;
+            display: block;
+        }
+
+        .stat-label {
+            font-size: 11px;
+            opacity: 0.9;
+        }
+
+        .benefits-grid {
+            display: none;
+            grid-template-columns: 1fr 1fr;
+            gap: 12px;
+        }
+
+        .benefit-item {
+            background: #f8f9fa;
+            padding: 16px 12px;
+            border-radius: 12px;
+            text-align: center;
+        }
+
+            .benefit-item i {
+                font-size: 28px;
+                color: var(--vinfast-blue);
+                margin-bottom: 8px;
+            }
+
+            .benefit-item h4 {
+                font-size: 13px;
+                font-weight: 700;
+                margin-bottom: 4px;
+            }
+
+            .benefit-item p {
+                font-size: 11px;
+                color: #666;
+            }
+
+        /* Loading Overlay */
+        .loading-overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0,0,0,0.5);
+            z-index: 9999;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            gap: 16px;
+        }
+
+            .loading-overlay.show {
+                display: flex;
+            }
+
+        .spinner {
+            width: 50px;
+            height: 50px;
+            border: 4px solid white;
+            border-top-color: var(--vinfast-red);
+            border-radius: 50%;
+            animation: spin-loader 1s linear infinite;
+        }
+
+        @keyframes spin-loader {
+            to {
+                transform: rotate(360deg);
+            }
+        }
+
+        .loading-text {
+            color: white;
+            font-weight: 600;
+        }
+
+        /* Fade in animation */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.6s;
+        }
+
+            .fade-in.visible {
+                opacity: 1;
+                transform: translateY(0);
+            }
+
+        /* ============================================
+           MOBILE RESPONSIVE (max-width: 768px)
+           ============================================ */
+        @media (max-width: 768px) {
+            body {
+                padding-bottom: calc(80px + var(--safe-bottom));
+            }
+
+            /* Hide desktop elements */
+            .desktop-header {
+                display: none;
+            }
+
+            .mobile-header {
+                display: block;
+            }
+
+            .mobile-only {
+                display: block;
+            }
+
+            .stats-bar {
+                display: flex;
+            }
+
+            .benefits-grid {
+                display: grid;
+            }
+
+            .bottom-nav {
+                display: flex;
+            }
+
+            /* Adjust hero for mobile */
+            .hero {
+                margin-top: 75px;
+                padding: 24px 16px;
+            }
+
+                .hero h1 {
+                    font-size: 26px;
+                    letter-spacing: 0;
+                    line-height: 1.3;
+                }
+
+                .hero p {
+                    font-size: 14px;
+                    line-height: 1.6;
+                }
+
+            .hero-badges {
+                gap: 12px;
+                margin-top: 20px;
+            }
+
+            .badge {
+                padding: 8px 12px;
+                font-size: 11px;
+                border-radius: 20px;
+            }
+
+            .cta-button {
+                padding: 14px 28px;
+                font-size: 16px;
+                border-radius: 25px;
+                margin-top: 20px;
+            }
+
+            /* Section mobile style */
+            .section-title h2 {
+                font-size: 20px;
+                display: flex;
+                align-items: center;
+                gap: 8px;
+                justify-content: center;
+            }
+
+            .section-title p {
+                font-size: 13px;
+            }
+
+            /* Fleet section mobile */
+            .fleet {
+                padding: 20px 16px;
+            }
+
+            .cars-grid {
+                grid-template-columns: 1fr;
+                gap: 12px;
+            }
+
+            .car-card {
+                border-radius: 16px;
+                display: flex;
+                gap: 12px;
+                padding: 16px;
+                flex-direction: row;
+            }
+
+            .car-image {
+                width: 100px;
+                height: 100px;
+                border-radius: 12px;
+                flex-shrink: 0;
+                background: linear-gradient(135deg, #e3f2fd 0%, #bbdefb 100%);
+            }
+
+            .car-icon {
+                font-size: 40px;
+            }
+
+            .car-badge {
+                top: 12px;
+                right: 12px;
+                padding: 4px 10px;
+                font-size: 10px;
+            }
+
+            .car-info {
+                padding: 0;
+                flex: 1;
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between;
+            }
+
+                .car-info h3 {
+                    font-size: 16px;
+                    margin-bottom: 4px;
+                }
+
+            .car-specs {
+                gap: 12px;
+                font-size: 12px;
+                margin: 8px 0;
+            }
+
+            .car-price {
+                margin: 0;
+            }
+
+            .price {
+                font-size: 22px;
+            }
+
+            .period {
+                font-size: 12px;
+            }
+
+            .book-btn {
+                padding: 10px 20px;
+                border-radius: 20px;
+                font-size: 13px;
+                margin-top: 8px;
+            }
+
+            /* Pricing mobile */
+            .pricing {
+                padding: 20px 16px;
+            }
+
+            .pricing-tabs {
+                gap: 8px;
+                margin-bottom: 16px;
+                overflow-x: auto;
+                padding-bottom: 4px;
+                -webkit-overflow-scrolling: touch;
+                justify-content: flex-start;
+            }
+
+                .pricing-tabs::-webkit-scrollbar {
+                    display: none;
+                }
+
+            .tab-btn {
+                flex-shrink: 0;
+                padding: 10px 20px;
+                font-size: 13px;
+            }
+
+            .pricing-grid {
+                grid-template-columns: 1fr;
+                gap: 12px;
+            }
+
+            .pricing-card {
+                padding: 20px;
+                border-radius: 16px;
+            }
+
+                .pricing-card.featured {
+                    transform: none;
+                }
+
+                    .pricing-card.featured::before {
+                        content: 'Phổ biến';
+                        font-size: 10px;
+                        padding: 4px 12px;
+                        top: -10px;
+                    }
+
+                .pricing-card h3 {
+                    font-size: 18px;
+                }
+
+            .price-tag {
+                font-size: 32px;
+                margin: 8px 0;
+            }
+
+                .price-tag span {
+                    font-size: 14px;
+                }
+
+            .features {
+                margin-top: 12px;
+            }
+
+                .features li {
+                    padding: 6px 0;
+                    font-size: 13px;
+                }
+
+            /* Location mobile */
+            .location {
+                padding: 20px 16px;
+            }
+
+            .location-content {
+                grid-template-columns: 1fr;
+                gap: 16px;
+            }
+
+            .location-info h2 {
+                font-size: 20px;
+                margin-bottom: 16px;
+            }
+
+            .location-info p {
+                font-size: 13px;
+            }
+
+            .location-features {
+                grid-template-columns: 1fr;
+                gap: 12px;
+                margin-top: 16px;
+            }
+
+            .location-feature {
+                padding: 12px;
+                font-size: 13px;
+            }
+
+            .map-container {
+                height: 250px;
+            }
+
+            /* Booking mobile */
+            .booking {
+                padding: 20px 16px;
+                margin-bottom: 100px;
+            }
+
+            .booking-form {
+                padding: 20px 16px;
+                border-radius: 16px;
+            }
+
+            .form-grid {
+                grid-template-columns: 1fr;
+                gap: 0;
+            }
+
+            .form-group {
+                margin-bottom: 16px;
+            }
+
+                .form-group label {
+                    font-size: 14px;
+                    display: flex;
+                    align-items: center;
+                    gap: 6px;
+                }
+
+                    .form-group label i {
+                        color: var(--vinfast-blue);
+                        width: 16px;
+                    }
+
+                .form-group input,
+                .form-group select,
+                .form-group textarea {
+                    padding: 14px 16px;
+                    font-size: 15px;
+                    -webkit-appearance: none;
+                }
+
+            .form-row-mobile {
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                gap: 12px;
+            }
+
+            .submit-btn {
+                padding: 16px;
+                font-size: 16px;
+                border-radius: 12px;
+                margin-top: 8px;
+            }
+
+            /* Footer mobile */
+            footer {
+                padding: 2rem 16px 100px;
+            }
+
+            .footer-content {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+
+            /* Floating buttons mobile */
+            .floating-buttons {
+                bottom: 100px;
+                right: 20px;
+                gap: 12px;
+            }
+
+            .floating-btn {
+                width: 50px;
+                height: 50px;
+            }
+
+                .floating-btn::before,
+                .floating-btn::after {
+                    display: none;
+                }
+
+            /* Success message mobile */
+            .success-message {
+                padding: 24px;
+                border-radius: 16px;
+            }
+
+                .success-message i {
+                    font-size: 48px;
+                }
+
+                .success-message h3 {
+                    font-size: 20px;
+                }
+
+                .success-message p {
+                    font-size: 14px;
+                }
+
+            .order-id-mobile {
+                background: rgba(255,255,255,0.2);
+                padding: 8px 16px;
+                border-radius: 20px;
+                display: inline-block;
+                margin-top: 12px;
+                font-weight: 700;
+                font-size: 16px;
+            }
+        }
+
+        /* Tablet responsive */
+        @media (min-width: 769px) and (max-width: 1200px) {
+            .nav-container {
+                padding: 1rem;
+            }
+
+            nav ul {
+                gap: 1rem;
+            }
+
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .location-content {
+                grid-template-columns: 1fr;
+            }
+
+            .pricing-card.featured {
+                transform: scale(1.02);
+            }
+        }
+    </style>
+    <base target="_blank">
+</head>
+<body>
+    <!-- Loading Overlay -->
+    <div class="loading-overlay" id="loadingOverlay">
+        <div class="spinner"></div>
+        <div class="loading-text">Đang gửi yêu cầu...</div>
+    </div>
+
+    <!-- Desktop Header -->
+    <header class="desktop-header">
+        <div class="nav-container">
+            <div class="logo">
+                <i class="fas fa-bolt"></i>
+                <div class="logo-text-desktop">
+                    <div>VINFAST</div>
+                    <div>ĐÀ NẴNG</div>
+                </div>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="#home">Trang chủ</a></li>
+                    <li><a href="#fleet">Dòng xe</a></li>
+                    <li><a href="#pricing">Bảng giá</a></li>
+                    <li><a href="#location">Vị trí</a></li>
+                    <li><a href="#booking">Đặt xe</a></li>
+                </ul>
+            </nav>
+            <a href="tel:0914372327" class="hotline-desktop">
+                <i class="fas fa-phone"></i>
+                0914 372 327
+            </a>
+        </div>
+    </header>
+
+    <!-- Mobile Header -->
+    <header class="mobile-header">
+        <div class="header-top">
+            <div class="logo-mobile">
+                <i class="fas fa-bolt"></i>
+                <div class="logo-text">
+                    VINFAST
+                    <span>Thuê Xe Điện Đà Nẵng</span>
+                </div>
+            </div>
+            <a href="tel:0914372327" class="header-call">
+                <i class="fas fa-phone"></i>
+            </a>
+        </div>
+        <div class="quick-info">
+            <span><i class="fas fa-phone"></i> 0914 372 327</span>
+            <span><i class="fas fa-clock"></i> 6:00 - 22:00</span>
+            <span><i class="fas fa-map-marker-alt"></i> Đà Nẵng</span>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="hero-content">
+            <h1>Thuê Xe Điện <span>VinFast</span><br class="mobile-only"> Tự Lái Đà Nẵng</h1>
+            <p>Trải nghiệm công nghệ xe điện hàng đầu Việt Nam. Tự do khám phá Đà Nẵng - Hội An - Quảng Nam với chi phí tối ưu, thủ tục đơn giản.</p>
+            <a href="#booking" class="cta-button">
+                <i class="fas fa-calendar-check"></i>
+                Đặt Xe Ngay
+            </a>
+            <div class="hero-badges">
+                <div class="badge">
+                    <i class="fas fa-shield-alt"></i>
+                    <span>Bảo hiểm 100%</span>
+                </div>
+                <div class="badge">
+                    <i class="fas fa-charging-station"></i>
+                    <span>Sạc miễn phí</span>
+                </div>
+                <div class="badge mobile-only">
+                    <i class="fas fa-headset"></i>
+                    <span>Hỗ trợ 24/7</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Quick Stats (Mobile) -->
+    <div class="stats-bar mobile-only">
+        <div class="stat-item">
+            <span class="stat-number">50+</span>
+            <span class="stat-label">Xe sẵn sàng</span>
+        </div>
+        <div class="stat-item">
+            <span class="stat-number">1000+</span>
+            <span class="stat-label">Khách hàng</span>
+        </div>
+        <div class="stat-item">
+            <span class="stat-number">4.9</span>
+            <span class="stat-label">Đánh giá</span>
+        </div>
+    </div>
+
+    <!-- Fleet Section -->
+    <section class="fleet" id="fleet">
+        <div class="container">
+            <div class="section-title fade-in">
+                <h2><i class="fas fa-car mobile-only"></i> Đội Xe Của Chúng Tôi</h2>
+                <p>Đa dạng dòng xe VinFast điện phù hợp mọi nhu cầu di chuyển</p>
+            </div>
+            <div class="cars-grid">
+                <!-- VF3 -->
+                <div class="car-card fade-in">
+                    <div class="car-image">
+                        <span class="car-badge">Mới 2024</span>
+                        <i class="fas fa-car-side car-icon"></i>
+                    </div>
+                    <div class="car-info">
+                        <h3>VinFast VF 3</h3>
+                        <div class="car-specs">
+                            <span><i class="fas fa-user"></i> 4 chỗ</span>
+                            <span><i class="fas fa-battery-full"></i> 210 km</span>
+                            <span class="desktop-only"><i class="fas fa-bolt"></i> Tự động</span>
+                        </div>
+                        <p class="desktop-only" style="color: #666; font-size: 0.9rem; margin-bottom: 1rem;">Xe điện mini hoàn hảo cho phố thị, dễ dàng di chuyển trong ngõ hẹp.</p>
+                        <div class="car-price">
+                            <span class="price">650K</span>
+                            <span class="period">/ngày</span>
+                        </div>
+                        <button class="book-btn" onclick="selectCar('VF3')">
+                            <i class="fas fa-calendar-plus"></i> Chọn Xe
+                        </button>
+                    </div>
+                </div>
+
+                <!-- VF5 -->
+                <div class="car-card fade-in">
+                    <div class="car-image">
+                        <span class="car-badge" style="background: #28a745;">Phổ biến</span>
+                        <i class="fas fa-car car-icon"></i>
+                    </div>
+                    <div class="car-info">
+                        <h3>VinFast VF 5 Plus</h3>
+                        <div class="car-specs">
+                            <span><i class="fas fa-user"></i> 5 chỗ</span>
+                            <span><i class="fas fa-battery-full"></i> 300 km</span>
+                            <span class="desktop-only"><i class="fas fa-bolt"></i> Tự động</span>
+                        </div>
+                        <p class="desktop-only" style="color: #666; font-size: 0.9rem; margin-bottom: 1rem;">SUV đô thị cỡ nhỏ, không gian rộng rãi, phù hợp gia đình.</p>
+                        <div class="car-price">
+                            <span class="price">850K</span>
+                            <span class="period">/ngày</span>
+                        </div>
+                        <button class="book-btn" onclick="selectCar('VF5')">
+                            <i class="fas fa-calendar-plus"></i> Chọn Xe
+                        </button>
+                    </div>
+                </div>
+
+                <!-- VF e34 -->
+                <div class="car-card fade-in">
+                    <div class="car-image">
+                        <i class="fas fa-taxi car-icon"></i>
+                    </div>
+                    <div class="car-info">
+                        <h3>VinFast VF e34</h3>
+                        <div class="car-specs">
+                            <span><i class="fas fa-user"></i> 5 chỗ</span>
+                            <span><i class="fas fa-battery-full"></i> 285 km</span>
+                            <span class="desktop-only"><i class="fas fa-bolt"></i> Tự động</span>
+                        </div>
+                        <p class="desktop-only" style="color: #666; font-size: 0.9rem; margin-bottom: 1rem;">SUV điện cỡ C đầu tiên của Việt Nam, đẳng cấp và tiện nghi.</p>
+                        <div class="car-price">
+                            <span class="price">1.2tr</span>
+                            <span class="period">/ngày</span>
+                        </div>
+                        <button class="book-btn" onclick="selectCar('VFe34')">
+                            <i class="fas fa-calendar-plus"></i> Chọn Xe
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing Section -->
+    <section class="pricing" id="pricing">
+        <div class="container">
+            <div class="section-title fade-in">
+                <h2><i class="fas fa-tags mobile-only"></i> Bảng Giá Thuê Xe</h2>
+                <p>Ưu đãi hấp dẫn cho thuê dài hạn</p>
+            </div>
+
+            <div class="pricing-tabs">
+                <button class="tab-btn active" onclick="switchTab('daily', this)">Theo Ngày</button>
+                <button class="tab-btn" onclick="switchTab('weekly', this)">Theo Tuần</button>
+                <button class="tab-btn" onclick="switchTab('monthly', this)">Theo Tháng</button>
+            </div>
+
+            <div class="pricing-grid" id="pricing-content">
+                <!-- Content loaded by JS -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Choose Us (Mobile) -->
+    <section class="mobile-only" style="background: white; margin: 12px; border-radius: 16px; padding: 20px 16px; box-shadow: 0 2px 10px rgba(0,0,0,0.05);">
+        <h2 class="section-title-mobile" style="font-size: 20px; font-weight: 700; color: var(--vinfast-blue); margin-bottom: 16px; display: flex; align-items: center; gap: 8px;">
+            <i class="fas fa-star"></i>
+            Tại Sao Chọn Chúng Tôi
+        </h2>
+        <div class="benefits-grid">
+            <div class="benefit-item">
+                <i class="fas fa-shield-alt"></i>
+                <h4>Bảo Hiểm 100%</h4>
+                <p>An tâm mọi lúc</p>
+            </div>
+            <div class="benefit-item">
+                <i class="fas fa-charging-station"></i>
+                <h4>Sạc Miễn Phí</h4>
+                <p>Tiết kiệm chi phí</p>
+            </div>
+            <div class="benefit-item">
+                <i class="fas fa-headset"></i>
+                <h4>Hỗ Trợ 24/7</h4>
+                <p>Luôn sẵn sàng</p>
+            </div>
+            <div class="benefit-item">
+                <i class="fas fa-gas-pump"></i>
+                <h4>Không Xăng</h4>
+                <p>Thân thiện môi trường</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Location Section -->
+    <section class="location" id="location">
+        <div class="container">
+            <div class="location-content">
+                <div class="location-info fade-in">
+                    <h2><i class="fas fa-map-marker-alt"></i> Vị Trí Thuận Lợi</h2>
+                    <p>Chúng tôi tọa lạc tại trung tâm thị trấn Đà Nẵng - cửa ngõ kết nối Đà Nẵng và các điểm du lịch nổi tiếng.</p>
+                    <p><strong>Địa chỉ:</strong> Đà Nẵng, Việt Nam</p>
+                    <p><strong>Giờ mở cửa:</strong> 6:00 - 22:00 hàng ngày</p>
+
+                    <div class="location-features">
+                        <div class="location-feature">
+                            <i class="fas fa-plane"></i>
+                            <span>Cách sân bay Đà Nẵng 45 phút</span>
+                        </div>
+                        <div class="location-feature">
+                            <i class="fas fa-train"></i>
+                            <span>Gần sân bay Đà Nẵng 10 phút</span>
+                        </div>
+                        <div class="location-feature">
+                            <i class="fas fa-umbrella-beach"></i>
+                            <span>Cách biển Mỹ Khê 5 phút</span>
+                        </div>
+                        <div class="location-feature">
+                            <i class="fas fa-charging-station"></i>
+                            <span>Trạm sạc VinFast gần nhất 2km</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="map-container fade-in">
+                    <iframe src="https://www.google.com/maps/embed?origin=mfe&pb=!1m2!2m1!1zMTQ2IMSQ4bq3bmcgSMOyYSwgSG_DoCBDaMOidSwgSG_DoCBWYW5nLCDEkMOgIE7hurVuZw" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+                    </iframe>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Booking Section -->
+    <section class="booking" id="booking">
+        <div class="container">
+            <div class="section-title fade-in">
+                <h2><i class="fas fa-calendar-check mobile-only"></i> Đặt Xe Ngay</h2>
+                <p>Điền thông tin để nhận báo giá chi tiết và ưu đãi đặc biệt</p>
+            </div>
+
+            <form class="booking-form fade-in" id="bookingForm" onsubmit="handleBooking(event)">
+                <div class="form-grid">
+                    <div class="form-group">
+                        <label><i class="fas fa-user"></i> Họ và tên *</label>
+                        <input type="text" name="name" id="name" required placeholder="Nguyễn Văn A">
+                    </div>
+
+                    <div class="form-group">
+                        <label><i class="fas fa-phone"></i> Số điện thoại *</label>
+                        <input type="tel" name="phone" id="phone" required placeholder="0914 372 327" pattern="[0-9]{10,11}">
+                    </div>
+
+                    <div class="form-group desktop-only">
+                        <label><i class="fas fa-envelope"></i> Email</label>
+                        <input type="email" name="email" id="email" placeholder="example@gmail.com">
+                    </div>
+
+                    <div class="form-group">
+                        <label><i class="fas fa-car"></i> Chọn dòng xe *</label>
+                        <select name="car" id="carSelect" required>
+                            <option value="">-- Chọn xe --</option>
+                            <option value="VF3">VinFast VF 3 - 650K/ngày</option>
+                            <option value="VF5">VinFast VF 5 Plus - 850K/ngày</option>
+                            <option value="VFe34">VinFast VF e34 - 1.2tr/ngày</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group form-row-mobile">
+                        <div>
+                            <label><i class="fas fa-calendar"></i> Ngày nhận xe *</label>
+                            <input type="date" name="pickup" id="pickup" required>
+                        </div>
+                        <div>
+                            <label><i class="fas fa-calendar-check"></i> Ngày trả xe *</label>
+                            <input type="date" name="return" id="return" required>
+                        </div>
+                    </div>
+
+                    <div class="form-group desktop-only">
+                        <label><i class="fas fa-clock"></i> Giờ nhận xe</label>
+                        <input type="time" name="time" id="time" value="08:00">
+                    </div>
+
+                    <div class="form-group">
+                        <label><i class="fas fa-map-marker-alt"></i> Địa điểm giao xe</label>
+                        <input type="text" name="location" id="location" required placeholder="100 Trần Tử Bình/Đà Nẵng">
+                    </div>
+
+                    <div class="form-group full-width">
+                        <label><i class="fas fa-comment"></i> Ghi chú thêm</label>
+                        <textarea name="note" id="note" rows="3" placeholder="Yêu cầu đặc biệt, địa điểm giao xe cụ thể..."></textarea>
+                    </div>
+
+                    <button type="submit" class="submit-btn" id="submitBtn">
+                        <i class="fas fa-paper-plane"></i> Gửi Yêu Cầu Đặt Xe
+                    </button>
+                </div>
+            </form>
+
+            <!-- Success Message -->
+            <div class="success-message" id="successMessage">
+                <i class="fas fa-check-circle"></i>
+                <h3>Đặt Xe Thành Công!</h3>
+                <p>Cảm ơn bạn đã đặt xe. Chúng tôi đã nhận được yêu cầu và sẽ liên hệ xác nhận trong vòng 15 phút.</p>
+                <p style="margin-top: 1rem; font-size: 0.9rem;">Mã đơn: <strong id="orderId"></strong></p>
+                <div class="order-id-mobile mobile-only" id="orderIdMobile"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>Về Chúng Tôi</h3>
+                <p>VinFast Đà Nẵng - Đơn vị cho thuê xe điện tự lái hàng đầu khu vực Quảng Nam - Đà Nẵng. Cam kết mang đến trải nghiệm di chuyển xanh, tiện nghi và an toàn.</p>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-zalo" style="font-style: normal; font-weight: bold;">Z</i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fas fa-envelope"></i></a>
+                </div>
+            </div>
+
+            <div class="footer-section">
+                <h3>Liên Hệ</h3>
+                <p><i class="fas fa-map-marker-alt"></i> 123 Trần Phú, Đà Nẵng</p>
+                <p><i class="fas fa-phone"></i> Hotline: 0914 372 327</p>
+                <p><i class="fas fa-envelope"></i> Email: thuexe@vinfastnuithanh.vn</p>
+                <p><i class="fas fa-clock"></i> Giờ làm việc: 6:00 - 22:00</p>
+            </div>
+
+            <div class="footer-section">
+                <h3>Dịch Vụ</h3>
+                <p><a href="#">Thuê xe theo ngày</a></p>
+                <p><a href="#">Thuê xe dài hạn</a></p>
+                <p><a href="#">Dịch vụ doanh nghiệp</a></p>
+                <p><a href="#">Đưa đón sân bay</a></p>
+                <p><a href="#">Tour du lịch</a></p>
+            </div>
+
+            <div class="footer-section">
+                <h3>Hỗ Trợ</h3>
+                <p><a href="#">Câu hỏi thường gặp</a></p>
+                <p><a href="#">Chính sách thuê xe</a></p>
+                <p><a href="#">Hướng dẫn sử dụng</a></p>
+                <p><a href="#">Điều khoản dịch vụ</a></p>
+                <p><a href="#">Chính sách bảo mật</a></p>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p>&copy; 2024 VinFast Đà Nẵng. All rights reserved. | Designed for Green Mobility</p>
+        </div>
+    </footer>
+
+    <!-- Floating Contact Buttons -->
+    <div class="floating-buttons">
+        <a href="https://zalo.me/0914372327" target="_blank" class="floating-btn zalo-btn" data-tooltip="Chat Zalo">
+            <img src="https://i.ibb.co/YTkypfNw/Zalo.png" alt="Zalo">
+        </a>
+        <a href="https://www.messenger.com/e2ee/t/8312555842105869" target="_blank" class="floating-btn messenger-btn" data-tooltip="Messenger">
+            <svg viewBox="0 0 24 24" fill="white" style="width: 32px; height: 32px;">
+                <path d="M12,2C6.48,2,2,6.03,2,11c0,2.64,1.34,4.99,3.44,6.55V22l4.04-2.24C10.02,19.92,10.99,20,12,20c5.52,0,10-4.03,10-9 S17.52,2,12,2z M13.07,14.35l-2.55-2.73L6.5,14.35l4.01-4.26l2.6,2.73l3.97-2.73L13.07,14.35z" />
+            </svg>
+        </a>
+        <a href="tel:0914372327" class="floating-btn phone-btn" data-tooltip="Gọi ngay">
+            <svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" style="width: 28px; height: 28px;">
+                <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" />
+            </svg>
+        </a>
+    </div>
+
+    <!-- Bottom Navigation (Mobile) -->
+    <nav class="bottom-nav">
+        <a href="#home" class="nav-item active">
+            <i class="fas fa-home"></i>
+            <span>Trang chủ</span>
+        </a>
+        <a href="#fleet" class="nav-item">
+            <i class="fas fa-car"></i>
+            <span>Xe</span>
+        </a>
+        <a href="#booking" class="nav-item book-now">
+            <i class="fas fa-calendar-plus"></i>
+            <span>Đặt xe</span>
+        </a>
+        <a href="#pricing" class="nav-item">
+            <i class="fas fa-tags"></i>
+            <span>Giá</span>
+        </a>
+        <a href="tel:0914372327" class="nav-item">
+            <i class="fas fa-phone-alt"></i>
+            <span>Gọi ngay</span>
+        </a>
+    </nav>
+
+    <script>
+        // Google Apps Script URL
+        const GOOGLE_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbx6h2UTbk7d0kqXUS1R_evAS6Eh0APGNtpqM-FpJPkc-Y08L8FGigJ_M-abASL3Mvkd/exec';
+
+        // Pricing Data
+        const pricingData = {
+            daily: [
+                { name: 'VF 3', price: '650K', period: '/ngày', featured: false, features: ['Bảo hiểm thân vỏ', 'Sạc pin miễn phí', 'Hỗ trợ 24/7', 'Giới hạn 300km/ngày'] },
+                { name: 'VF 5 Plus', price: '850K', period: '/ngày', featured: true, features: ['Bảo hiểm toàn diện', 'Sạc pin không giới hạn', 'GPS miễn phí', 'Giới hạn 400km/ngày'] },
+                { name: 'VF e34', price: '1.2tr', period: '/ngày', featured: false, features: ['Bảo hiểm toàn diện', 'Sạc pin không giới hạn', 'Camera hành trình', 'Không giới hạn km'] }
+            ],
+            weekly: [
+                { name: 'VF 3', price: '4.2tr', period: '/tuần', featured: false, features: ['Giảm 8%', 'Bảo hiểm thân vỏ', 'Sạc miễn phí', 'Hỗ trợ 24/7'] },
+                { name: 'VF 5 Plus', price: '5.5tr', period: '/tuần', featured: true, features: ['Giảm 8%', 'Bảo hiểm toàn diện', 'GPS miễn phí', 'Sạc không giới hạn'] },
+                { name: 'VF e34', price: '7.5tr', period: '/tuần', featured: false, features: ['Giảm 10%', 'Bảo hiểm toàn diện', 'Camera hành trình', 'Không giới hạn km'] }
+            ],
+            monthly: [
+                { name: 'VF 3', price: '15tr', period: '/tháng', featured: false, features: ['Giảm 23%', 'Bảo dưỡng định kỳ', 'Sạc miễn phí', 'Hỗ trợ 24/7'] },
+                { name: 'VF 5 Plus', price: '20tr', period: '/tháng', featured: true, features: ['Giảm 22%', 'Thay lốp miễn phí', 'Bảo hiểm toàn diện', 'Sạc không giới hạn'] },
+                { name: 'VF e34', price: '28tr', period: '/tháng', featured: false, features: ['Giảm 22%', 'Camera hành trình', 'Không giới hạn km', 'Bảo dưỡng định kỳ'] }
+            ]
+        };
+
+        // Initialize
+        document.addEventListener('DOMContentLoaded', function () {
+            // Set min date
+            const today = new Date().toISOString().split('T')[0];
+            document.getElementById('pickup').min = today;
+            document.getElementById('return').min = today;
+
+            // Load initial pricing
+            renderPricing('daily');
+
+            // Update return date min when pickup changes
+            document.getElementById('pickup').addEventListener('change', function () {
+                document.getElementById('return').min = this.value;
+            });
+
+            // Scroll animation observer
+            const observerOptions = {
+                threshold: 0.1,
+                rootMargin: "0px 0px -50px 0px"
+            };
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                    }
+                });
+            }, observerOptions);
+
+            document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+
+            // Active nav on scroll
+            updateActiveNav();
+        });
+
+        // Render Pricing
+        function renderPricing(period) {
+            const container = document.getElementById('pricing-content');
+            const data = pricingData[period];
+
+            container.innerHTML = data.map((item, index) => `
+                        <div class="pricing-card ${item.featured ? 'featured' : ''} fade-in visible" style="animation-delay: ${index * 0.1}s">
+                            <h3>${item.name}</h3>
+                            <div class="price-tag">${item.price} <span>${item.period}</span></div>
+                            <ul class="features">
+                                ${item.features.map(f => `<li><i class="fas fa-check"></i> ${f}</li>`).join('')}
+                            </ul>
+                        </div>
+                    `).join('');
+        }
+
+        // Switch Tab
+        function switchTab(period, btn) {
+            document.querySelectorAll('.tab-btn').forEach(t => t.classList.remove('active'));
+            btn.classList.add('active');
+            renderPricing(period);
+        }
+
+        // Select Car
+        function selectCar(carModel) {
+            document.getElementById('carSelect').value = carModel;
+            document.getElementById('booking').scrollIntoView({ behavior: 'smooth' });
+
+            // Highlight effect
+            const select = document.getElementById('carSelect');
+            select.style.borderColor = '#E31937';
+            setTimeout(() => {
+                select.style.borderColor = '';
+            }, 500);
+        }
+
+        // Handle Booking
+        async function handleBooking(e) {
+            e.preventDefault();
+
+            const pickup = new Date(document.getElementById('pickup').value);
+            const returnDate = new Date(document.getElementById('return').value);
+            const days = Math.ceil((returnDate - pickup) / (1000 * 60 * 60 * 24));
+
+            if (days < 1) {
+                alert('Vui lòng chọn ngày trả xe sau ngày nhận xe!');
+                return;
+            }
+
+            const loadingOverlay = document.getElementById('loadingOverlay');
+            const submitBtn = document.getElementById('submitBtn');
+
+            loadingOverlay.classList.add('show');
+            submitBtn.disabled = true;
+            submitBtn.classList.add('loading');
+
+            const formData = {
+                name: document.getElementById('name').value,
+                phone: document.getElementById('phone').value,
+                email: document.getElementById('email')?.value || '',
+                car: document.getElementById('carSelect').value,
+                pickup: document.getElementById('pickup').value,
+                return: document.getElementById('return').value,
+                days: days,
+                location: document.getElementById('location').value,
+                note: document.getElementById('note').value,
+                timestamp: new Date().toLocaleString('vi-VN'),
+                orderId: 'VF' + Date.now().toString().slice(-8)
+            };
+
+            try {
+                await fetch(GOOGLE_SCRIPT_URL, {
+                    method: 'POST',
+                    body: JSON.stringify(formData),
+                    headers: { 'Content-Type': 'application/json' },
+                    mode: 'no-cors'
+                });
+
+                document.getElementById('orderId').textContent = formData.orderId;
+                document.getElementById('orderIdMobile').textContent = formData.orderId;
+                document.getElementById('successMessage').classList.add('show');
+                document.getElementById('bookingForm').style.display = 'none';
+
+                // Scroll to success message
+                document.getElementById('successMessage').scrollIntoView({ behavior: 'smooth', block: 'center' });
+
+            } catch (error) {
+                console.error('Error:', error);
+                alert('Có lỗi xảy ra. Vui lòng gọi hotline 0914 372 327 để đặt xe trực tiếp!');
+            } finally {
+                loadingOverlay.classList.remove('show');
+                submitBtn.disabled = false;
+                submitBtn.classList.remove('loading');
+            }
+        }
+
+        // Update Active Nav
+        function updateActiveNav() {
+            const sections = document.querySelectorAll('section[id]');
+            const navItems = document.querySelectorAll('.nav-item[href^="#"], .bottom-nav .nav-item');
+
+            window.addEventListener('scroll', () => {
+                let current = '';
+                sections.forEach(section => {
+                    const sectionTop = section.offsetTop;
+                    if (scrollY >= sectionTop - 200) {
+                        current = section.getAttribute('id');
+                    }
+                });
+
+                navItems.forEach(item => {
+                    item.classList.remove('active');
+                    if (item.getAttribute('href') === '#' + current) {
+                        item.classList.add('active');
+                    }
+                });
+            });
+        }
+
+        // Smooth scroll for nav items
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
+            });
+        });
+
+        setInterval(function () {
+            var box = document.getElementById("uhchatboz");
+            if (box) {
+                box.style.left = "20px";
+                box.style.right = "auto";
+            }
+        }, 500);
+    </script>
+
+    <!-- Chat widget -->
+    <script src="https://uhchat.net/code.php?f=e7fcad"></script>
+</body>
+</html>
