@@ -70,9 +70,9 @@
             color: var(--vinfast-blue);
         }
 
-            .logo i {
-                color: var(--vinfast-red);
-                font-size: 2rem;
+            .logo img {
+                height: 50px;
+                width: auto;
             }
 
         .logo-text-desktop {
@@ -164,9 +164,9 @@
             gap: 8px;
         }
 
-            .logo-mobile i {
-                font-size: 24px;
-                color: var(--vinfast-red);
+            .logo-mobile img {
+                height: 40px;
+                width: auto;
             }
 
         .logo-text {
@@ -375,27 +375,25 @@
             }
 
         .car-image {
+            position: relative;
+            width: 100%;
             height: 200px;
-            background: linear-gradient(135deg, #f5f5f5 0%, #e0e0e0 100%);
+            background: linear-gradient(135deg, #e3f2fd 0%, #bbdefb 100%);
             display: flex;
             align-items: center;
             justify-content: center;
-            position: relative;
             overflow: hidden;
         }
 
-            .car-image::before {
-                content: '';
-                position: absolute;
-                width: 150%;
-                height: 150%;
-                background: radial-gradient(circle, rgba(0,51,160,0.1) 0%, transparent 70%);
+            .car-image img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+                transition: transform 0.3s;
             }
 
-        .car-icon {
-            font-size: 5rem;
-            color: var(--vinfast-blue);
-            z-index: 1;
+        .car-card:hover .car-image img {
+            transform: scale(1.05);
         }
 
         .car-badge {
@@ -408,6 +406,7 @@
             border-radius: 20px;
             font-size: 0.8rem;
             font-weight: 700;
+            z-index: 2;
         }
 
         .car-info {
@@ -1229,9 +1228,12 @@
                 background: linear-gradient(135deg, #e3f2fd 0%, #bbdefb 100%);
             }
 
-            .car-icon {
-                font-size: 40px;
-            }
+                .car-image img {
+                    width: 100%;
+                    height: 100%;
+                    object-fit: cover;
+                    border-radius: 12px;
+                }
 
             .car-badge {
                 top: 12px;
@@ -1510,6 +1512,21 @@
                 transform: scale(1.02);
             }
         }
+
+        /* Mobile: thu nhỏ UHChat */
+        @media (max-width: 768px) {
+
+            #uhchatboz {
+                transform: scale(0.85);
+                transform-origin: bottom right;
+            }
+
+                /* khung chat */
+                #uhchatboz .iframe {
+                    width: 260px !important;
+                    height: 300px !important;
+                }
+
     </style>
     <base target="_blank">
 </head>
@@ -1524,7 +1541,7 @@
     <header class="desktop-header">
         <div class="nav-container">
             <div class="logo">
-                <i class="fas fa-bolt"></i>
+                <img src="https://i.ibb.co/7NXwdJp0/Logo-Vin-Fast.png" alt="VinFast Logo">
                 <div class="logo-text-desktop">
                     <div>VINFAST</div>
                     <div>ĐÀ NẴNG</div>
@@ -1550,7 +1567,7 @@
     <header class="mobile-header">
         <div class="header-top">
             <div class="logo-mobile">
-                <i class="fas fa-bolt"></i>
+                <img src="https://i.ibb.co/7NXwdJp0/Logo-Vin-Fast.png" alt="VinFast Logo">
                 <div class="logo-text">
                     VINFAST
                     <span>Thuê Xe Điện Đà Nẵng</span>
@@ -1616,23 +1633,30 @@
                 <h2><i class="fas fa-car mobile-only"></i> Đội Xe Của Chúng Tôi</h2>
                 <p>Đa dạng dòng xe VinFast điện phù hợp mọi nhu cầu di chuyển</p>
             </div>
+
+            <!-- Ô TÔ ĐIỆN VINFAST -->
+            <div style="margin-bottom: 1.5rem;">
+                <h3 style="font-size: 1.5rem; color: var(--vinfast-blue); display: flex; align-items: center; gap: 10px; text-transform: uppercase; font-weight: 800;">
+                    <i class="fas fa-bolt"></i> Ô TÔ ĐIỆN VINFAST
+                </h3>
+            </div>
+
             <div class="cars-grid">
                 <!-- VF3 -->
                 <div class="car-card fade-in">
                     <div class="car-image">
-                        <span class="car-badge">Mới 2024</span>
-                        <i class="fas fa-car-side car-icon"></i>
+                        <span class="car-badge">Tiết kiệm</span>
+                        <img src="https://vinfastquangninh.com/wp-content/uploads/2024/05/VF3-vang.png" alt="VinFast VF 3">
                     </div>
                     <div class="car-info">
                         <h3>VinFast VF 3</h3>
                         <div class="car-specs">
                             <span><i class="fas fa-user"></i> 4 chỗ</span>
                             <span><i class="fas fa-battery-full"></i> 210 km</span>
-                            <span class="desktop-only"><i class="fas fa-bolt"></i> Tự động</span>
                         </div>
-                        <p class="desktop-only" style="color: #666; font-size: 0.9rem; margin-bottom: 1rem;">Xe điện mini hoàn hảo cho phố thị, dễ dàng di chuyển trong ngõ hẹp.</p>
+                        <p class="desktop-only" style="color: #666; font-size: 0.9rem; margin-bottom: 1rem;">Xe đô thị cỡ nhỏ, linh hoạt, phù hợp di chuyển trong thành phố.</p>
                         <div class="car-price">
-                            <span class="price">650K</span>
+                            <span class="price">550K</span>
                             <span class="period">/ngày</span>
                         </div>
                         <button class="book-btn" onclick="selectCar('VF3')">
@@ -1641,22 +1665,21 @@
                     </div>
                 </div>
 
-                <!-- VF5 -->
+                <!-- VF5 Plus -->
                 <div class="car-card fade-in">
                     <div class="car-image">
                         <span class="car-badge" style="background: #28a745;">Phổ biến</span>
-                        <i class="fas fa-car car-icon"></i>
+                        <img src="https://vinfastquangninh.com/wp-content/uploads/2024/05/VF5-xanh-duong-nhat.png" alt="VinFast VF 5 Plus">
                     </div>
                     <div class="car-info">
                         <h3>VinFast VF 5 Plus</h3>
                         <div class="car-specs">
                             <span><i class="fas fa-user"></i> 5 chỗ</span>
                             <span><i class="fas fa-battery-full"></i> 300 km</span>
-                            <span class="desktop-only"><i class="fas fa-bolt"></i> Tự động</span>
                         </div>
                         <p class="desktop-only" style="color: #666; font-size: 0.9rem; margin-bottom: 1rem;">SUV đô thị cỡ nhỏ, không gian rộng rãi, phù hợp gia đình.</p>
                         <div class="car-price">
-                            <span class="price">850K</span>
+                            <span class="price">750K</span>
                             <span class="period">/ngày</span>
                         </div>
                         <button class="book-btn" onclick="selectCar('VF5')">
@@ -1665,24 +1688,239 @@
                     </div>
                 </div>
 
+                <!-- VF6 -->
+                <div class="car-card fade-in">
+                    <div class="car-image">
+                        <span class="car-badge">Mới 2024</span>
+                        <img src="https://vinfastquangninh.com/wp-content/uploads/2024/05/VF6-xanh-la-nhat.png" alt="VinFast VF 6">
+                    </div>
+                    <div class="car-info">
+                        <h3>VinFast VF 6</h3>
+                        <div class="car-specs">
+                            <span><i class="fas fa-user"></i> 5 chỗ</span>
+                            <span><i class="fas fa-battery-full"></i> 400 km</span>
+                        </div>
+                        <p class="desktop-only" style="color: #666; font-size: 0.9rem; margin-bottom: 1rem;">SUV đô thị hiện đại, thiết kế trẻ trung, công nghệ tiên tiến.</p>
+                        <div class="car-price">
+                            <span class="price">950K</span>
+                            <span class="period">/ngày</span>
+                        </div>
+                        <button class="book-btn" onclick="selectCar('VF6')">
+                            <i class="fas fa-calendar-plus"></i> Chọn Xe
+                        </button>
+                    </div>
+                </div>
+
+                <!-- VF7 -->
+                <div class="car-card fade-in">
+                    <div class="car-image">
+                        <img src="https://vinfastquangninh.com/wp-content/uploads/2024/05/VF7-1.png" alt="VinFast VF 7">
+                    </div>
+                    <div class="car-info">
+                        <h3>VinFast VF 7</h3>
+                        <div class="car-specs">
+                            <span><i class="fas fa-user"></i> 5 chỗ</span>
+                            <span><i class="fas fa-battery-full"></i> 450 km</span>
+                        </div>
+                        <p class="desktop-only" style="color: #666; font-size: 0.9rem; margin-bottom: 1rem;">SUV cỡ C sang trọng, không gian rộng rãi, đẳng cấp.</p>
+                        <div class="car-price">
+                            <span class="price">1.1tr</span>
+                            <span class="period">/ngày</span>
+                        </div>
+                        <button class="book-btn" onclick="selectCar('VF7')">
+                            <i class="fas fa-calendar-plus"></i> Chọn Xe
+                        </button>
+                    </div>
+                </div>
+
+                <!-- VF8 -->
+                <div class="car-card fade-in">
+                    <div class="car-image">
+                        <span class="car-badge" style="background: #6f42c1;">Cao cấp</span>
+                        <img src="https://vinfastquangninh.com/wp-content/uploads/2024/05/vf8-1.png" alt="VinFast VF 8">
+                    </div>
+                    <div class="car-info">
+                        <h3>VinFast VF 8</h3>
+                        <div class="car-specs">
+                            <span><i class="fas fa-user"></i> 5 chỗ</span>
+                            <span><i class="fas fa-battery-full"></i> 500 km</span>
+                        </div>
+                        <p class="desktop-only" style="color: #666; font-size: 0.9rem; margin-bottom: 1rem;">SUV cỡ E cao cấp, trang bị full option, lái xe tự hành cấp độ 2.</p>
+                        <div class="car-price">
+                            <span class="price">1.5tr</span>
+                            <span class="period">/ngày</span>
+                        </div>
+                        <button class="book-btn" onclick="selectCar('VF8')">
+                            <i class="fas fa-calendar-plus"></i> Chọn Xe
+                        </button>
+                    </div>
+                </div>
+
+                <!-- VF9 -->
+                <div class="car-card fade-in">
+                    <div class="car-image">
+                        <span class="car-badge" style="background: #fd7e14;">Sang trọng</span>
+                        <img src="https://vinfastquangninh.com/wp-content/uploads/2024/05/vf9-2.png" alt="VinFast VF 9">
+                    </div>
+                    <div class="car-info">
+                        <h3>VinFast VF 9</h3>
+                        <div class="car-specs">
+                            <span><i class="fas fa-user"></i> 6-7 chỗ</span>
+                            <span><i class="fas fa-battery-full"></i> 594 km</span>
+                        </div>
+                        <p class="desktop-only" style="color: #666; font-size: 0.9rem; margin-bottom: 1rem;">SUV cỡ lớn 7 chỗ, không gian rộng nhất, phù hợp gia đình đông người.</p>
+                        <div class="car-price">
+                            <span class="price">2.0tr</span>
+                            <span class="period">/ngày</span>
+                        </div>
+                        <button class="book-btn" onclick="selectCar('VF9')">
+                            <i class="fas fa-calendar-plus"></i> Chọn Xe
+                        </button>
+                    </div>
+                </div>
+
                 <!-- VF e34 -->
                 <div class="car-card fade-in">
                     <div class="car-image">
-                        <i class="fas fa-taxi car-icon"></i>
+                        <span class="car-badge" style="background: #00bcd4;">Classic</span>
+                        <img src="https://i.ibb.co/7dXTmr9t/vinfast-vfe34-3480-357-removebg-preview.png" alt="VinFast VF e34">
                     </div>
                     <div class="car-info">
                         <h3>VinFast VF e34</h3>
                         <div class="car-specs">
                             <span><i class="fas fa-user"></i> 5 chỗ</span>
                             <span><i class="fas fa-battery-full"></i> 285 km</span>
-                            <span class="desktop-only"><i class="fas fa-bolt"></i> Tự động</span>
                         </div>
                         <p class="desktop-only" style="color: #666; font-size: 0.9rem; margin-bottom: 1rem;">SUV điện cỡ C đầu tiên của Việt Nam, đẳng cấp và tiện nghi.</p>
+                        <div class="car-price">
+                            <span class="price">800K</span>
+                            <span class="period">/ngày</span>
+                        </div>
+                        <button class="book-btn" onclick="selectCar('VFe34')">
+                            <i class="fas fa-calendar-plus"></i> Chọn Xe
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- DÒNG XE DỊCH VỤ -->
+            <div style="margin-top: 3rem; margin-bottom: 1.5rem;">
+                <h3 style="font-size: 1.5rem; color: var(--vinfast-blue); display: flex; align-items: center; gap: 10px; text-transform: uppercase; font-weight: 800;">
+                    <i class="fas fa-truck"></i> DÒNG XE DỊCH VỤ
+                </h3>
+            </div>
+
+            <div class="cars-grid">
+                <!-- MINIO GREEN -->
+                <div class="car-card fade-in">
+                    <div class="car-image">
+                        <span class="car-badge" style="background: #e91e63;">4 Chỗ</span>
+                        <img src="https://vinfastquangninh.com/wp-content/uploads/2025/03/minio_pink_gold_1.webp" alt="MINIO GREEN">
+                    </div>
+                    <div class="car-info">
+                        <h3>MINIO GREEN</h3>
+                        <div class="car-specs">
+                            <span><i class="fas fa-user"></i> 4 chỗ</span>
+                            <span><i class="fas fa-battery-full"></i> 180 km</span>
+                        </div>
+                        <p class="desktop-only" style="color: #666; font-size: 0.9rem; margin-bottom: 1rem;">Xe mini điện đa dụng, tiết kiệm, phù hợp giao hàng nhỏ.</p>
+                        <div class="car-price">
+                            <span class="price">650K</span>
+                            <span class="period">/ngày</span>
+                        </div>
+                        <button class="book-btn" onclick="selectCar('MINIO')">
+                            <i class="fas fa-calendar-plus"></i> Chọn Xe
+                        </button>
+                    </div>
+                </div>
+
+                <!-- LIMO GREEN -->
+                <div class="car-card fade-in">
+                    <div class="car-image">
+                        <span class="car-badge" style="background: #009688;">Limousine</span>
+                        <img src="https://vinfastquangninh.com/wp-content/uploads/2025/03/BGProductInfoAdvanced.webp" alt="LIMO GREEN">
+                    </div>
+                    <div class="car-info">
+                        <h3>LIMO GREEN</h3>
+                        <div class="car-specs">
+                            <span><i class="fas fa-user"></i> 9 chỗ</span>
+                            <span><i class="fas fa-battery-full"></i> 280 km</span>
+                        </div>
+                        <p class="desktop-only" style="color: #666; font-size: 0.9rem; margin-bottom: 1rem;">Xe limousine điện sang trọng, không gian rộng rãi, phù hợp đưa đón VIP.</p>
                         <div class="car-price">
                             <span class="price">1.2tr</span>
                             <span class="period">/ngày</span>
                         </div>
-                        <button class="book-btn" onclick="selectCar('VFe34')">
+                        <button class="book-btn" onclick="selectCar('LIMO')">
+                            <i class="fas fa-calendar-plus"></i> Chọn Xe
+                        </button>
+                    </div>
+                </div>
+
+                <!-- VAN EC -->
+                <div class="car-card fade-in">
+                    <div class="car-image">
+                        <span class="car-badge" style="background: #4caf50;">Van</span>
+                        <img src="https://i.ibb.co/b5zgyQnN/ecvan-jade.webp" alt="VAN EC">
+                    </div>
+                    <div class="car-info">
+                        <h3>VAN EC</h3>
+                        <div class="car-specs">
+                            <span><i class="fas fa-box"></i> Chở hàng</span>
+                            <span><i class="fas fa-battery-full"></i> 250 km</span>
+                        </div>
+                        <p class="desktop-only" style="color: #666; font-size: 0.9rem; margin-bottom: 1rem;">Xe tải van điện, khoang hàng rộng, kinh tế cho doanh nghiệp.</p>
+                        <div class="car-price">
+                            <span class="price">700K</span>
+                            <span class="period">/ngày</span>
+                        </div>
+                        <button class="book-btn" onclick="selectCar('VANEC')">
+                            <i class="fas fa-calendar-plus"></i> Chọn Xe
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Herio Green -->
+                <div class="car-card fade-in">
+                    <div class="car-image">
+                        <span class="car-badge" style="background: #ff9800;">5 Chỗ</span>
+                        <img src="https://vinfast.danang.vn/wp-content/uploads/2025/03/herio-green-bac.webp" alt="Herio Green">
+                    </div>
+                    <div class="car-info">
+                        <h3>Herio Green</h3>
+                        <div class="car-specs">
+                            <span><i class="fas fa-user"></i> 5 chỗ</span>
+                            <span><i class="fas fa-battery-full"></i> 320 km</span>
+                        </div>
+                        <p class="desktop-only" style="color: #666; font-size: 0.9rem; margin-bottom: 1rem;">Xe đa dụng cỡ nhỏ, linh hoạt cho cả gia đình và công việc.</p>
+                        <div class="car-price">
+                            <span class="price">850K</span>
+                            <span class="period">/ngày</span>
+                        </div>
+                        <button class="book-btn" onclick="selectCar('HERIO')">
+                            <i class="fas fa-calendar-plus"></i> Chọn Xe
+                        </button>
+                    </div>
+                </div>
+
+                <!-- NERIO GREEN -->
+                <div class="car-card fade-in">
+                    <div class="car-image">
+                        <span class="car-badge" style="background: #9c27b0;">5 Chỗ</span>
+                        <img src="https://vinfasthadong.com.vn/wp-content/uploads/2025/05/Nerio-Green-mau-vang-1110x581-1.png" alt="NERIO GREEN">
+                    </div>
+                    <div class="car-info">
+                        <h3>NERIO GREEN</h3>
+                        <div class="car-specs">
+                            <span><i class="fas fa-user"></i> 5 chỗ</span>
+                            <span><i class="fas fa-battery-full"></i> 350 km</span>
+                        </div>
+                        <p class="desktop-only" style="color: #666; font-size: 0.9rem; margin-bottom: 1rem;">Xe SUV cỡ nhỏ đa dụng, thiết kế hiện đại, tiện nghi đầy đủ.</p>
+                        <div class="car-price">
+                            <span class="price">900K</span>
+                            <span class="period">/ngày</span>
+                        </div>
+                        <button class="book-btn" onclick="selectCar('NERIO')">
                             <i class="fas fa-calendar-plus"></i> Chọn Xe
                         </button>
                     </div>
@@ -1803,13 +2041,27 @@
                         <input type="email" name="email" id="email" placeholder="example@gmail.com">
                     </div>
 
+                    <!-- ✅ ĐÃ SỬA: Thêm đầy đủ các dòng xe -->
                     <div class="form-group">
                         <label><i class="fas fa-car"></i> Chọn dòng xe *</label>
                         <select name="car" id="carSelect" required>
                             <option value="">-- Chọn xe --</option>
-                            <option value="VF3">VinFast VF 3 - 650K/ngày</option>
-                            <option value="VF5">VinFast VF 5 Plus - 850K/ngày</option>
-                            <option value="VFe34">VinFast VF e34 - 1.2tr/ngày</option>
+                            <optgroup label="Ô TÔ ĐIỆN VINFAST">
+                                <option value="VF3">VinFast VF 3 - 550K/ngày</option>
+                                <option value="VF5">VinFast VF 5 Plus - 750K/ngày</option>
+                                <option value="VF6">VinFast VF 6 - 950K/ngày</option>
+                                <option value="VF7">VinFast VF 7 - 1.1tr/ngày</option>
+                                <option value="VF8">VinFast VF 8 - 1.5tr/ngày</option>
+                                <option value="VF9">VinFast VF 9 - 2.0tr/ngày</option>
+                                <option value="VFe34">VinFast VF e34 - 800K/ngày</option>
+                            </optgroup>
+                            <optgroup label="DÒNG XE DỊCH VỤ">
+                                <option value="MINIO">MINIO GREEN (4 chỗ) - 650K/ngày</option>
+                                <option value="LIMO">LIMO GREEN (9 chỗ) - 1.2tr/ngày</option>
+                                <option value="VANEC">VAN EC (Chở hàng) - 700K/ngày</option>
+                                <option value="HERIO">Herio Green (5 chỗ) - 850K/ngày</option>
+                                <option value="NERIO">NERIO GREEN (5 chỗ) - 900K/ngày</option>
+                            </optgroup>
                         </select>
                     </div>
 
@@ -1829,14 +2081,15 @@
                         <input type="time" name="time" id="time" value="08:00">
                     </div>
 
-                    <div class="form-group">
-                        <label><i class="fas fa-map-marker-alt"></i> Địa điểm giao xe</label>
-                        <input type="text" name="location" id="location" required placeholder="100 Trần Tử Bình/Đà Nẵng">
+                    <!-- ✅ ĐÃ SỬA: Địa điểm giao xe thành input text -->
+                    <div class="form-group full-width">
+                        <label><i class="fas fa-map-marker-alt"></i> Địa điểm giao xe *</label>
+                        <input type="text" name="location" id="location" required placeholder="100 Trần Tử Bình, Đà Nẵng">
                     </div>
 
                     <div class="form-group full-width">
                         <label><i class="fas fa-comment"></i> Ghi chú thêm</label>
-                        <textarea name="note" id="note" rows="3" placeholder="Yêu cầu đặc biệt, địa điểm giao xe cụ thể..."></textarea>
+                        <textarea name="note" id="note" rows="3" placeholder="Yêu cầu đặc biệt, số chuyến bay, v.v..."></textarea>
                     </div>
 
                     <button type="submit" class="submit-btn" id="submitBtn">
@@ -1874,7 +2127,7 @@
                 <h3>Liên Hệ</h3>
                 <p><i class="fas fa-map-marker-alt"></i> 123 Trần Phú, Đà Nẵng</p>
                 <p><i class="fas fa-phone"></i> Hotline: 0914 372 327</p>
-                <p><i class="fas fa-envelope"></i> Email: thuexe@vinfastnuithanh.vn</p>
+                <p><i class="fas fa-envelope"></i> Email: tranlam236@gmail.com</p>
                 <p><i class="fas fa-clock"></i> Giờ làm việc: 6:00 - 22:00</p>
             </div>
 
@@ -1945,24 +2198,33 @@
 
     <script>
         // Google Apps Script URL
-        const GOOGLE_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbx6h2UTbk7d0kqXUS1R_evAS6Eh0APGNtpqM-FpJPkc-Y08L8FGigJ_M-abASL3Mvkd/exec';
+        const GOOGLE_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbxGm41GK03PxTzkJyKoVLzLno8YRLVjzPmBf6Qjd60P0GHVmkZqjHdiMFobl_7P13u8WA/exec';
 
-        // Pricing Data
+        // Pricing Data - GIẢM GIÁ 10-15%
         const pricingData = {
             daily: [
-                { name: 'VF 3', price: '650K', period: '/ngày', featured: false, features: ['Bảo hiểm thân vỏ', 'Sạc pin miễn phí', 'Hỗ trợ 24/7', 'Giới hạn 300km/ngày'] },
-                { name: 'VF 5 Plus', price: '850K', period: '/ngày', featured: true, features: ['Bảo hiểm toàn diện', 'Sạc pin không giới hạn', 'GPS miễn phí', 'Giới hạn 400km/ngày'] },
-                { name: 'VF e34', price: '1.2tr', period: '/ngày', featured: false, features: ['Bảo hiểm toàn diện', 'Sạc pin không giới hạn', 'Camera hành trình', 'Không giới hạn km'] }
+                { name: 'VF 5 Plus', price: '750K', period: '/ngày', featured: true, features: ['Bảo hiểm toàn diện', 'Sạc pin không giới hạn', 'GPS miễn phí', 'Giới hạn 400km/ngày'] },
+                { name: 'VF 6', price: '950K', period: '/ngày', featured: false, features: ['Bảo hiểm toàn diện', 'Sạc pin không giới hạn', 'Camera hành trình', 'Giới hạn 400km/ngày'] },
+                { name: 'VF 7', price: '1.1tr', period: '/ngày', featured: false, features: ['Bảo hiểm toàn diện', 'Sạc pin không giới hạn', 'Camera hành trình', 'Không giới hạn km'] },
+                { name: 'VF 8', price: '1.5tr', period: '/ngày', featured: false, features: ['Bảo hiểm toàn diện', 'Sạc pin không giới hạn', 'Camera 360', 'Không giới hạn km'] },
+                { name: 'VF 9', price: '2.0tr', period: '/ngày', featured: false, features: ['Bảo hiểm toàn diện', 'Sạc pin không giới hạn', 'Camera 360', 'Không giới hạn km'] },
+                { name: 'VF e34', price: '900K', period: '/ngày', featured: false, features: ['Bảo hiểm toàn diện', 'Sạc pin không giới hạn', 'Camera hành trình', 'Không giới hạn km'] }
             ],
             weekly: [
-                { name: 'VF 3', price: '4.2tr', period: '/tuần', featured: false, features: ['Giảm 8%', 'Bảo hiểm thân vỏ', 'Sạc miễn phí', 'Hỗ trợ 24/7'] },
-                { name: 'VF 5 Plus', price: '5.5tr', period: '/tuần', featured: true, features: ['Giảm 8%', 'Bảo hiểm toàn diện', 'GPS miễn phí', 'Sạc không giới hạn'] },
-                { name: 'VF e34', price: '7.5tr', period: '/tuần', featured: false, features: ['Giảm 10%', 'Bảo hiểm toàn diện', 'Camera hành trình', 'Không giới hạn km'] }
+                { name: 'VF 5 Plus', price: '4.9tr', period: '/tuần', featured: true, features: ['Giảm 7%', 'Bảo hiểm toàn diện', 'GPS miễn phí', 'Sạc không giới hạn'] },
+                { name: 'VF 6', price: '6.2tr', period: '/tuần', featured: false, features: ['Giảm 7%', 'Bảo hiểm toàn diện', 'Camera hành trình', 'Sạc không giới hạn'] },
+                { name: 'VF 7', price: '7.2tr', period: '/tuần', featured: false, features: ['Giảm 7%', 'Bảo hiểm toàn diện', 'Camera hành trình', 'Không giới hạn km'] },
+                { name: 'VF 8', price: '9.8tr', period: '/tuần', featured: false, features: ['Giảm 7%', 'Bảo hiểm toàn diện', 'Camera 360', 'Không giới hạn km'] },
+                { name: 'VF 9', price: '13tr', period: '/tuần', featured: false, features: ['Giảm 7%', 'Bảo hiểm toàn diện', 'Camera 360', 'Không giới hạn km'] },
+                { name: 'VF e34', price: '5.9tr', period: '/tuần', featured: false, features: ['Giảm 7%', 'Bảo hiểm toàn diện', 'Camera hành trình', 'Không giới hạn km'] }
             ],
             monthly: [
-                { name: 'VF 3', price: '15tr', period: '/tháng', featured: false, features: ['Giảm 23%', 'Bảo dưỡng định kỳ', 'Sạc miễn phí', 'Hỗ trợ 24/7'] },
-                { name: 'VF 5 Plus', price: '20tr', period: '/tháng', featured: true, features: ['Giảm 22%', 'Thay lốp miễn phí', 'Bảo hiểm toàn diện', 'Sạc không giới hạn'] },
-                { name: 'VF e34', price: '28tr', period: '/tháng', featured: false, features: ['Giảm 22%', 'Camera hành trình', 'Không giới hạn km', 'Bảo dưỡng định kỳ'] }
+                { name: 'VF 5 Plus', price: '18tr', period: '/tháng', featured: true, features: ['Giảm 20%', 'Thay lốp miễn phí', 'Bảo hiểm toàn diện', 'Sạc không giới hạn'] },
+                { name: 'VF 6', price: '23tr', period: '/tháng', featured: false, features: ['Giảm 20%', 'Thay lốp miễn phí', 'Bảo hiểm toàn diện', 'Sạc không giới hạn'] },
+                { name: 'VF 7', price: '26tr', period: '/tháng', featured: false, features: ['Giảm 20%', 'Thay lốp miễn phí', 'Bảo hiểm toàn diện', 'Không giới hạn km'] },
+                { name: 'VF 8', price: '36tr', period: '/tháng', featured: false, features: ['Giảm 20%', 'Thay lốp miễn phí', 'Bảo hiểm toàn diện', 'Không giới hạn km'] },
+                { name: 'VF 9', price: '48tr', period: '/tháng', featured: false, features: ['Giảm 20%', 'Thay lốp miễn phí', 'Bảo hiểm toàn diện', 'Không giới hạn km'] },
+                { name: 'VF e34', price: '22tr', period: '/tháng', featured: false, features: ['Giảm 18%', 'Thay lốp miễn phí', 'Bảo hiểm toàn diện', 'Không giới hạn km'] }
             ]
         };
 
@@ -2007,14 +2269,14 @@
             const data = pricingData[period];
 
             container.innerHTML = data.map((item, index) => `
-                        <div class="pricing-card ${item.featured ? 'featured' : ''} fade-in visible" style="animation-delay: ${index * 0.1}s">
-                            <h3>${item.name}</h3>
-                            <div class="price-tag">${item.price} <span>${item.period}</span></div>
-                            <ul class="features">
-                                ${item.features.map(f => `<li><i class="fas fa-check"></i> ${f}</li>`).join('')}
-                            </ul>
-                        </div>
-                    `).join('');
+                                    <div class="pricing-card ${item.featured ? 'featured' : ''} fade-in visible" style="animation-delay: ${index * 0.1}s">
+                                        <h3>${item.name}</h3>
+                                        <div class="price-tag">${item.price} <span>${item.period}</span></div>
+                                        <ul class="features">
+                                            ${item.features.map(f => `<li><i class="fas fa-check"></i> ${f}</li>`).join('')}
+                                        </ul>
+                                    </div>
+                                `).join('');
         }
 
         // Switch Tab
@@ -2034,7 +2296,7 @@
             select.style.borderColor = '#E31937';
             setTimeout(() => {
                 select.style.borderColor = '';
-            }, 500);
+            }, 1000);
         }
 
         // Handle Booking
