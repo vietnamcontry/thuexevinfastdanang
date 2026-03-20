@@ -1513,20 +1513,6 @@
             }
         }
 
-        /* Mobile: thu nhỏ UHChat */
-        @media (max-width: 768px) {
-
-            #uhchatboz {
-                transform: scale(0.85);
-                transform-origin: bottom right;
-            }
-
-                /* khung chat */
-                #uhchatboz .iframe {
-                    width: 260px !important;
-                    height: 300px !important;
-                }
-
     </style>
     <base target="_blank">
 </head>
@@ -2269,14 +2255,14 @@
             const data = pricingData[period];
 
             container.innerHTML = data.map((item, index) => `
-                                    <div class="pricing-card ${item.featured ? 'featured' : ''} fade-in visible" style="animation-delay: ${index * 0.1}s">
-                                        <h3>${item.name}</h3>
-                                        <div class="price-tag">${item.price} <span>${item.period}</span></div>
-                                        <ul class="features">
-                                            ${item.features.map(f => `<li><i class="fas fa-check"></i> ${f}</li>`).join('')}
-                                        </ul>
-                                    </div>
-                                `).join('');
+                                            <div class="pricing-card ${item.featured ? 'featured' : ''} fade-in visible" style="animation-delay: ${index * 0.1}s">
+                                                <h3>${item.name}</h3>
+                                                <div class="price-tag">${item.price} <span>${item.period}</span></div>
+                                                <ul class="features">
+                                                    ${item.features.map(f => `<li><i class="fas fa-check"></i> ${f}</li>`).join('')}
+                                                </ul>
+                                            </div>
+                                        `).join('');
         }
 
         // Switch Tab
@@ -2392,17 +2378,39 @@
                 }
             });
         });
-
-        setInterval(function () {
-            var box = document.getElementById("uhchatboz");
-            if (box) {
-                box.style.left = "20px";
-                box.style.right = "auto";
-            }
-        }, 500);
     </script>
 
     <!-- Chat widget -->
-    <script src="https://uhchat.net/code.php?f=e7fcad"></script>
+    <script type="text/javascript">
+        Tawk_API = Tawk_API || {};
+        Tawk_API.onLoad = function () {
+            var style = document.createElement('style');
+            style.innerHTML = `
+#tawkchat-container,
+.tawk-min-container,
+.tawk-button-circle,
+iframe[title*="chat widget"],
+iframe[title*="Tawk"],
+iframe[src*="tawk.to"] {
+left: 20px !important;
+right: auto !important;
+}
+`;
+            document.head.appendChild(style);
+        };
+    </script>
+
+    <script type="text/javascript">
+        var Tawk_API = Tawk_API || {}, Tawk_LoadStart = new Date();
+        (function () {
+            var s1 = document.createElement("script"), s0 = document.getElementsByTagName("script")[0];
+            s1.async = true;
+            s1.src = 'https://embed.tawk.to/69bbe15cf1726d1c37ecf371/1jk2ugkm8';
+            s1.charset = 'UTF-8';
+            s1.setAttribute('crossorigin', '*');
+            s0.parentNode.insertBefore(s1, s0);
+        })();
+    </script>
+
 </body>
 </html>
