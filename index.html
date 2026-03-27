@@ -3,19 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <meta name="theme-color" content="#0033A0">
+    <meta name="theme-color" content="#FF6B00">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>VinFast Đà Nẵng - Thuê Xe Điện Tự Lái</title>
+    <title>Taxi Đà Nẵng 2026 - Đặt Xe Giá Rẻ Sân Bay & Du Lịch</title>
+    <meta name="description" content="Taxi Đà Nẵng 2026 giá rẻ nhất. Đưa đón sân bay, Hội An, Bà Nà, Huế. Xe 4-7-16 chỗ, Limousine. Đặt xe online hoặc gọi 0914.372.327">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         :root {
-            --vinfast-blue: #0033A0;
-            --vinfast-red: #E31937;
-            --dark: #1a1a1a;
-            --light: #f8f9fa;
-            --gradient: linear-gradient(135deg, #0033A0 0%, #0052cc 100%);
+            --taxi-orange: #FF6B00;
+            --taxi-yellow: #FFC107;
+            --taxi-dark: #1a1a1a;
+            --taxi-light: #f8f9fa;
+            --gradient: linear-gradient(135deg, #FF6B00 0%, #FF8E00 100%);
             --safe-bottom: env(safe-area-inset-bottom, 0px);
         }
 
@@ -33,17 +34,15 @@
         body {
             font-family: 'Montserrat', sans-serif;
             line-height: 1.6;
-            color: var(--dark);
+            color: var(--taxi-dark);
             background: #f5f5f5;
             overflow-x: hidden;
             -webkit-font-smoothing: antialiased;
         }
 
-        /* ============================================
-           DESKTOP HEADER (default)
-           ============================================ */
+        /* DESKTOP HEADER */
         .desktop-header {
-            background: rgba(255,255,255,0.95);
+            background: rgba(255,255,255,0.98);
             backdrop-filter: blur(10px);
             position: fixed;
             width: 100%;
@@ -64,15 +63,14 @@
         .logo {
             display: flex;
             align-items: center;
-            gap: 10px;
+            gap: 12px;
             font-weight: 800;
-            font-size: 1.5rem;
-            color: var(--vinfast-blue);
+            font-size: 1.6rem;
+            color: var(--taxi-orange);
         }
 
-            .logo img {
-                height: 50px;
-                width: auto;
+            .logo i {
+                font-size: 2rem;
             }
 
         .logo-text-desktop {
@@ -81,12 +79,14 @@
         }
 
             .logo-text-desktop div:first-child {
-                font-size: 1.2rem;
+                font-size: 1.3rem;
+                letter-spacing: -0.5px;
             }
 
             .logo-text-desktop div:last-child {
-                font-size: 0.7rem;
-                color: var(--vinfast-red);
+                font-size: 0.75rem;
+                color: #666;
+                font-weight: 600;
             }
 
         nav ul {
@@ -97,14 +97,15 @@
 
         nav a {
             text-decoration: none;
-            color: var(--dark);
+            color: var(--taxi-dark);
             font-weight: 600;
             transition: color 0.3s;
             position: relative;
+            font-size: 0.95rem;
         }
 
             nav a:hover {
-                color: var(--vinfast-blue);
+                color: var(--taxi-orange);
             }
 
             nav a::after {
@@ -114,7 +115,7 @@
                 left: 0;
                 width: 0;
                 height: 2px;
-                background: var(--vinfast-red);
+                background: var(--taxi-orange);
                 transition: width 0.3s;
             }
 
@@ -123,7 +124,7 @@
             }
 
         .hotline-desktop {
-            background: var(--vinfast-red);
+            background: var(--taxi-orange);
             color: white;
             padding: 0.8rem 1.5rem;
             border-radius: 30px;
@@ -133,14 +134,13 @@
             align-items: center;
             gap: 8px;
             animation: pulse 2s infinite;
+            box-shadow: 0 4px 15px rgba(255,107,0,0.3);
         }
 
-        /* ============================================
-           MOBILE HEADER
-           ============================================ */
+        /* MOBILE HEADER */
         .mobile-header {
             display: none;
-            background: linear-gradient(135deg, var(--vinfast-blue) 0%, #0052cc 100%);
+            background: linear-gradient(135deg, var(--taxi-orange) 0%, #FF8E00 100%);
             color: white;
             padding: 12px 16px;
             position: fixed;
@@ -161,30 +161,29 @@
         .logo-mobile {
             display: flex;
             align-items: center;
-            gap: 8px;
+            gap: 10px;
         }
 
-            .logo-mobile img {
-                height: 40px;
-                width: auto;
+            .logo-mobile i {
+                font-size: 28px;
             }
 
         .logo-text {
             font-weight: 800;
-            font-size: 18px;
+            font-size: 20px;
             line-height: 1.2;
         }
 
             .logo-text span {
                 display: block;
-                font-size: 11px;
+                font-size: 12px;
                 color: rgba(255,255,255,0.9);
                 font-weight: 600;
             }
 
         .header-call {
-            background: var(--vinfast-red);
-            color: white;
+            background: white;
+            color: var(--taxi-orange);
             width: 44px;
             height: 44px;
             border-radius: 50%;
@@ -193,14 +192,15 @@
             justify-content: center;
             text-decoration: none;
             animation: pulse 2s infinite;
-            box-shadow: 0 4px 15px rgba(227,25,55,0.4);
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
         }
 
         .quick-info {
             display: flex;
             gap: 15px;
-            font-size: 11px;
-            opacity: 0.9;
+            font-size: 12px;
+            opacity: 0.95;
+            font-weight: 500;
         }
 
             .quick-info span {
@@ -219,12 +219,10 @@
             }
         }
 
-        /* ============================================
-           HERO SECTION
-           ============================================ */
+        /* HERO SECTION */
         .hero {
             margin-top: 80px;
-            background: linear-gradient(rgba(0,51,160,0.8), rgba(0,51,160,0.9)), url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 600"><rect fill="%230033A0" width="1200" height="600"/><path fill="%230052cc" d="M0 300L50 325L100 300L150 275L200 300L250 325L300 300L350 275L400 300L450 325L500 300L550 275L600 300L650 325L700 300L750 275L800 300L850 325L900 300L950 275L1000 300L1050 325L1100 300L1150 275L1200 300V600H0V300Z"/></svg>');
+            background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.7)), url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 600"><rect fill="%23FF6B00" width="1200" height="600"/><path fill="%23FF8E00" d="M0 300L50 325L100 300L150 275L200 300L250 325L300 300L350 275L400 300L450 325L500 300L550 275L600 300L650 325L700 300L750 275L800 300L850 325L900 300L950 275L1000 300L1050 325L1100 300L1150 275L1200 300V600H0V300Z"/></svg>');
             background-size: cover;
             background-position: center;
             color: white;
@@ -259,32 +257,34 @@
         .hero-content {
             position: relative;
             z-index: 1;
-            max-width: 800px;
+            max-width: 900px;
             margin: 0 auto;
         }
 
         .hero h1 {
-            font-size: 3.5rem;
+            font-size: 3.2rem;
             font-weight: 800;
             margin-bottom: 1rem;
             text-transform: uppercase;
-            letter-spacing: 2px;
+            letter-spacing: 1px;
+            line-height: 1.2;
         }
 
             .hero h1 span {
-                color: var(--vinfast-red);
+                color: var(--taxi-yellow);
             }
 
         .hero p {
             font-size: 1.3rem;
             margin-bottom: 2rem;
-            opacity: 0.9;
+            opacity: 0.95;
+            font-weight: 500;
         }
 
         .hero-badges {
             display: flex;
             justify-content: center;
-            gap: 2rem;
+            gap: 1.5rem;
             margin-top: 2rem;
             flex-wrap: wrap;
         }
@@ -292,19 +292,21 @@
         .badge {
             background: rgba(255,255,255,0.2);
             backdrop-filter: blur(10px);
-            padding: 1rem 2rem;
+            padding: 1rem 1.5rem;
             border-radius: 50px;
             display: flex;
             align-items: center;
-            gap: 10px;
+            gap: 8px;
             font-weight: 600;
+            font-size: 0.95rem;
+            border: 1px solid rgba(255,255,255,0.3);
         }
 
         .cta-button {
             display: inline-flex;
             align-items: center;
-            gap: 8px;
-            background: var(--vinfast-red);
+            gap: 10px;
+            background: var(--taxi-orange);
             color: white;
             padding: 1.2rem 3rem;
             border-radius: 50px;
@@ -313,17 +315,30 @@
             font-size: 1.1rem;
             margin-top: 2rem;
             transition: all 0.3s;
-            box-shadow: 0 10px 30px rgba(227,25,55,0.3);
+            box-shadow: 0 10px 30px rgba(255,107,0,0.4);
+            border: 2px solid transparent;
         }
 
             .cta-button:hover {
                 transform: translateY(-3px);
-                box-shadow: 0 15px 40px rgba(227,25,55,0.4);
+                box-shadow: 0 15px 40px rgba(255,107,0,0.5);
+                background: white;
+                color: var(--taxi-orange);
+                border-color: var(--taxi-orange);
             }
 
-        /* ============================================
-           SECTION COMMON
-           ============================================ */
+            .cta-button.secondary {
+                background: transparent;
+                border: 2px solid white;
+                margin-left: 1rem;
+            }
+
+                .cta-button.secondary:hover {
+                    background: white;
+                    color: var(--taxi-orange);
+                }
+
+        /* SECTION COMMON */
         .container {
             max-width: 1200px;
             margin: 0 auto;
@@ -337,8 +352,12 @@
 
             .section-title h2 {
                 font-size: 2.5rem;
-                color: var(--vinfast-blue);
+                color: var(--taxi-orange);
                 margin-bottom: 1rem;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                gap: 12px;
             }
 
             .section-title p {
@@ -346,61 +365,54 @@
                 font-size: 1.1rem;
             }
 
-        /* ============================================
-           FLEET SECTION
-           ============================================ */
-        .fleet {
+        /* SERVICES SECTION */
+        .services {
             padding: 5rem 2rem;
-            background: var(--light);
+            background: var(--taxi-light);
         }
 
-        .cars-grid {
+        .services-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
             gap: 2rem;
         }
 
-        .car-card {
+        .service-card {
             background: white;
             border-radius: 20px;
             overflow: hidden;
-            box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+            box-shadow: 0 10px 40px rgba(0,0,0,0.08);
             transition: all 0.3s;
             position: relative;
         }
 
-            .car-card:hover {
+            .service-card:hover {
                 transform: translateY(-10px);
-                box-shadow: 0 20px 60px rgba(0,0,0,0.15);
+                box-shadow: 0 20px 60px rgba(0,0,0,0.12);
             }
 
-        .car-image {
+        .service-image {
             position: relative;
             width: 100%;
             height: 200px;
-            background: linear-gradient(135deg, #e3f2fd 0%, #bbdefb 100%);
+            background: linear-gradient(135deg, #FFF3E0 0%, #FFE0B2 100%);
             display: flex;
             align-items: center;
             justify-content: center;
             overflow: hidden;
         }
 
-            .car-image img {
-                width: 100%;
-                height: 100%;
-                object-fit: cover;
-                transition: transform 0.3s;
+            .service-image i {
+                font-size: 5rem;
+                color: var(--taxi-orange);
+                opacity: 0.8;
             }
 
-        .car-card:hover .car-image img {
-            transform: scale(1.05);
-        }
-
-        .car-badge {
+        .service-badge {
             position: absolute;
             top: 1rem;
             right: 1rem;
-            background: var(--vinfast-red);
+            background: var(--taxi-orange);
             color: white;
             padding: 0.5rem 1rem;
             border-radius: 20px;
@@ -409,31 +421,37 @@
             z-index: 2;
         }
 
-        .car-info {
+        .service-info {
             padding: 1.5rem;
         }
 
-            .car-info h3 {
-                font-size: 1.5rem;
+            .service-info h3 {
+                font-size: 1.4rem;
                 margin-bottom: 0.5rem;
-                color: var(--dark);
+                color: var(--taxi-dark);
             }
 
-        .car-specs {
+        .service-features {
             display: flex;
-            gap: 1rem;
+            flex-direction: column;
+            gap: 0.5rem;
             margin: 1rem 0;
             font-size: 0.9rem;
             color: #666;
         }
 
-            .car-specs span {
+            .service-features span {
                 display: flex;
                 align-items: center;
-                gap: 5px;
+                gap: 8px;
             }
 
-        .car-price {
+            .service-features i {
+                color: var(--taxi-orange);
+                width: 20px;
+            }
+
+        .service-price {
             display: flex;
             align-items: baseline;
             gap: 5px;
@@ -441,18 +459,19 @@
         }
 
         .price {
-            font-size: 2rem;
+            font-size: 1.8rem;
             font-weight: 800;
-            color: var(--vinfast-red);
+            color: var(--taxi-orange);
         }
 
         .period {
             color: #666;
+            font-size: 0.9rem;
         }
 
         .book-btn {
             width: 100%;
-            background: var(--vinfast-blue);
+            background: var(--taxi-orange);
             color: white;
             border: none;
             padding: 1rem;
@@ -461,18 +480,117 @@
             cursor: pointer;
             transition: all 0.3s;
             font-size: 1rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
         }
 
             .book-btn:hover {
-                background: var(--vinfast-red);
+                background: #E55A00;
+                transform: translateY(-2px);
+                box-shadow: 0 5px 15px rgba(255,107,0,0.3);
             }
 
-        /* ============================================
-           PRICING SECTION
-           ============================================ */
-        .pricing {
+        /* ROUTES SECTION */
+        .routes {
             padding: 5rem 2rem;
             background: white;
+        }
+
+        .routes-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .route-card {
+            background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
+            border: 2px solid #e0e0e0;
+            border-radius: 20px;
+            padding: 2rem;
+            transition: all 0.3s;
+            position: relative;
+            overflow: hidden;
+        }
+
+            .route-card:hover {
+                border-color: var(--taxi-orange);
+                transform: translateY(-5px);
+                box-shadow: 0 15px 40px rgba(255,107,0,0.1);
+            }
+
+            .route-card.popular::before {
+                content: 'Phổ biến nhất';
+                position: absolute;
+                top: -12px;
+                left: 50%;
+                transform: translateX(-50%);
+                background: var(--taxi-orange);
+                color: white;
+                padding: 0.3rem 1rem;
+                border-radius: 20px;
+                font-size: 0.8rem;
+                font-weight: 700;
+            }
+
+        .route-header {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .route-icon {
+            width: 60px;
+            height: 60px;
+            background: var(--gradient);
+            border-radius: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.5rem;
+        }
+
+        .route-title h3 {
+            font-size: 1.3rem;
+            color: var(--taxi-dark);
+            margin-bottom: 0.3rem;
+        }
+
+        .route-title p {
+            font-size: 0.9rem;
+            color: #666;
+        }
+
+        .route-details {
+            list-style: none;
+            margin: 1.5rem 0;
+        }
+
+            .route-details li {
+                padding: 0.8rem 0;
+                border-bottom: 1px solid #eee;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+            }
+
+                .route-details li:last-child {
+                    border-bottom: none;
+                }
+
+        .route-price {
+            font-weight: 700;
+            color: var(--taxi-orange);
+            font-size: 1.1rem;
+        }
+
+        /* PRICING SECTION */
+        .pricing {
+            padding: 5rem 2rem;
+            background: var(--taxi-light);
         }
 
         .pricing-tabs {
@@ -485,9 +603,9 @@
 
         .tab-btn {
             padding: 1rem 2rem;
-            border: 2px solid var(--vinfast-blue);
+            border: 2px solid var(--taxi-orange);
             background: transparent;
-            color: var(--vinfast-blue);
+            color: var(--taxi-orange);
             border-radius: 30px;
             font-weight: 600;
             cursor: pointer;
@@ -495,93 +613,49 @@
         }
 
             .tab-btn.active, .tab-btn:hover {
-                background: var(--vinfast-blue);
+                background: var(--taxi-orange);
                 color: white;
             }
 
-        .pricing-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 2rem;
-        }
-
-        .pricing-card {
-            background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
-            border: 2px solid #e0e0e0;
+        .pricing-table {
+            background: white;
             border-radius: 20px;
-            padding: 2rem;
-            text-align: center;
-            transition: all 0.3s;
-            position: relative;
+            overflow: hidden;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.08);
         }
 
-            .pricing-card.featured {
-                border-color: var(--vinfast-red);
-                transform: scale(1.05);
-                box-shadow: 0 20px 60px rgba(227,25,55,0.2);
+            .pricing-table table {
+                width: 100%;
+                border-collapse: collapse;
             }
 
-                .pricing-card.featured::before {
-                    content: 'Phổ biến nhất';
-                    position: absolute;
-                    top: -12px;
-                    left: 50%;
-                    transform: translateX(-50%);
-                    background: var(--vinfast-red);
-                    color: white;
-                    padding: 0.3rem 1rem;
-                    border-radius: 20px;
-                    font-size: 0.8rem;
-                    font-weight: 700;
-                }
-
-            .pricing-card h3 {
-                font-size: 1.3rem;
-                margin-bottom: 1rem;
-                color: var(--vinfast-blue);
+            .pricing-table th {
+                background: var(--gradient);
+                color: white;
+                padding: 1.2rem;
+                text-align: left;
+                font-weight: 600;
             }
 
-        .price-tag {
-            font-size: 2.5rem;
-            font-weight: 800;
-            color: var(--vinfast-red);
-            margin: 1rem 0;
-        }
-
-            .price-tag span {
-                font-size: 1rem;
-                color: #666;
-                font-weight: 400;
-            }
-
-        .features {
-            list-style: none;
-            margin: 1.5rem 0;
-            text-align: left;
-        }
-
-            .features li {
-                padding: 0.5rem 0;
+            .pricing-table td {
+                padding: 1.2rem;
                 border-bottom: 1px solid #eee;
-                display: flex;
-                align-items: center;
-                gap: 10px;
             }
 
-                .features li:last-child {
-                    border-bottom: none;
-                }
-
-            .features i {
-                color: #28a745;
+            .pricing-table tr:hover {
+                background: #FFF3E0;
             }
 
-        /* ============================================
-           LOCATION SECTION
-           ============================================ */
+            .pricing-table .price-highlight {
+                color: var(--taxi-orange);
+                font-weight: 700;
+                font-size: 1.1rem;
+            }
+
+        /* LOCATION SECTION */
         .location {
             padding: 5rem 2rem;
-            background: var(--vinfast-blue);
+            background: var(--taxi-orange);
             color: white;
         }
 
@@ -595,11 +669,14 @@
         .location-info h2 {
             font-size: 2.5rem;
             margin-bottom: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 12px;
         }
 
         .location-info p {
             margin-bottom: 1rem;
-            opacity: 0.9;
+            opacity: 0.95;
             font-size: 1.1rem;
         }
 
@@ -614,10 +691,11 @@
             display: flex;
             align-items: center;
             gap: 10px;
-            background: rgba(255,255,255,0.1);
+            background: rgba(255,255,255,0.15);
             padding: 1rem;
             border-radius: 10px;
             backdrop-filter: blur(10px);
+            font-weight: 500;
         }
 
         .map-container {
@@ -639,12 +717,10 @@
                 border-radius: 20px;
             }
 
-        /* ============================================
-           BOOKING SECTION
-           ============================================ */
+        /* BOOKING SECTION */
         .booking {
             padding: 5rem 2rem;
-            background: var(--light);
+            background: white;
         }
 
         .booking-form {
@@ -654,6 +730,7 @@
             padding: 3rem;
             border-radius: 20px;
             box-shadow: 0 20px 60px rgba(0,0,0,0.1);
+            border: 2px solid #f0f0f0;
         }
 
         .form-grid {
@@ -663,7 +740,7 @@
         }
 
         .form-group {
-            margin-bottom: 1.5rem;
+            margin-bottom: 0.5rem;
         }
 
             .form-group.full-width {
@@ -674,8 +751,16 @@
                 display: block;
                 margin-bottom: 0.5rem;
                 font-weight: 600;
-                color: var(--dark);
+                color: var(--taxi-dark);
+                display: flex;
+                align-items: center;
+                gap: 8px;
             }
+
+                .form-group label i {
+                    color: var(--taxi-orange);
+                    width: 20px;
+                }
 
             .form-group input,
             .form-group select,
@@ -693,13 +778,13 @@
                 .form-group select:focus,
                 .form-group textarea:focus {
                     outline: none;
-                    border-color: var(--vinfast-blue);
-                    box-shadow: 0 0 0 3px rgba(0,51,160,0.1);
+                    border-color: var(--taxi-orange);
+                    box-shadow: 0 0 0 3px rgba(255,107,0,0.1);
                 }
 
         .submit-btn {
             width: 100%;
-            background: var(--vinfast-red);
+            background: var(--taxi-orange);
             color: white;
             border: none;
             padding: 1.2rem;
@@ -710,11 +795,16 @@
             transition: all 0.3s;
             grid-column: 1 / -1;
             position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
         }
 
             .submit-btn:hover {
-                background: #c41230;
+                background: #E55A00;
                 transform: translateY(-2px);
+                box-shadow: 0 10px 30px rgba(255,107,0,0.3);
             }
 
             .submit-btn:disabled {
@@ -776,11 +866,9 @@
             margin-bottom: 1rem;
         }
 
-        /* ============================================
-           FOOTER
-           ============================================ */
+        /* FOOTER */
         footer {
-            background: var(--dark);
+            background: var(--taxi-dark);
             color: white;
             padding: 3rem 2rem 1rem;
         }
@@ -794,8 +882,9 @@
         }
 
         .footer-section h3 {
-            color: var(--vinfast-red);
+            color: var(--taxi-orange);
             margin-bottom: 1rem;
+            font-size: 1.2rem;
         }
 
         .footer-section p,
@@ -804,6 +893,9 @@
             text-decoration: none;
             line-height: 2;
             transition: color 0.3s;
+            display: flex;
+            align-items: center;
+            gap: 8px;
         }
 
             .footer-section a:hover {
@@ -828,7 +920,7 @@
             }
 
                 .social-links a:hover {
-                    background: var(--vinfast-red);
+                    background: var(--taxi-orange);
                     transform: translateY(-3px);
                 }
 
@@ -840,9 +932,7 @@
             color: #666;
         }
 
-        /* ============================================
-           FLOATING BUTTONS
-           ============================================ */
+        /* FLOATING BUTTONS */
         .floating-buttons {
             position: fixed;
             bottom: 30px;
@@ -959,9 +1049,7 @@
             visibility: visible;
         }
 
-        /* ============================================
-           BOTTOM NAV (Mobile)
-           ============================================ */
+        /* BOTTOM NAV (Mobile) */
         .bottom-nav {
             display: none;
             position: fixed;
@@ -995,28 +1083,26 @@
             }
 
             .nav-item.active {
-                color: var(--vinfast-blue);
-                background: rgba(0,51,160,0.1);
+                color: var(--taxi-orange);
+                background: rgba(255,107,0,0.1);
             }
 
             .nav-item.book-now {
-                background: var(--vinfast-red);
+                background: var(--taxi-orange);
                 color: white;
                 padding: 12px 24px;
                 margin: -8px 0;
-                box-shadow: 0 4px 15px rgba(227,25,55,0.4);
+                box-shadow: 0 4px 15px rgba(255,107,0,0.4);
             }
 
-        /* ============================================
-           MOBILE SPECIFIC ELEMENTS
-           ============================================ */
+        /* MOBILE SPECIFIC */
         .mobile-only {
             display: none;
         }
 
         .stats-bar {
             display: none;
-            background: linear-gradient(135deg, var(--vinfast-blue) 0%, #0052cc 100%);
+            background: linear-gradient(135deg, var(--taxi-orange) 0%, #FF8E00 100%);
             color: white;
             margin: 12px;
             border-radius: 16px;
@@ -1054,7 +1140,7 @@
 
             .benefit-item i {
                 font-size: 28px;
-                color: var(--vinfast-blue);
+                color: var(--taxi-orange);
                 margin-bottom: 8px;
             }
 
@@ -1093,7 +1179,7 @@
             width: 50px;
             height: 50px;
             border: 4px solid white;
-            border-top-color: var(--vinfast-red);
+            border-top-color: var(--taxi-orange);
             border-radius: 50%;
             animation: spin-loader 1s linear infinite;
         }
@@ -1121,15 +1207,12 @@
                 transform: translateY(0);
             }
 
-        /* ============================================
-           MOBILE RESPONSIVE (max-width: 768px)
-           ============================================ */
+        /* MOBILE RESPONSIVE */
         @media (max-width: 768px) {
             body {
                 padding-bottom: calc(80px + var(--safe-bottom));
             }
 
-            /* Hide desktop elements */
             .desktop-header {
                 display: none;
             }
@@ -1154,7 +1237,6 @@
                 display: flex;
             }
 
-            /* Adjust hero for mobile */
             .hero {
                 margin-top: 75px;
                 padding: 24px 16px;
@@ -1172,7 +1254,7 @@
                 }
 
             .hero-badges {
-                gap: 12px;
+                gap: 10px;
                 margin-top: 20px;
             }
 
@@ -1187,32 +1269,33 @@
                 font-size: 16px;
                 border-radius: 25px;
                 margin-top: 20px;
+                width: 100%;
+                justify-content: center;
             }
 
-            /* Section mobile style */
+                .cta-button.secondary {
+                    margin-left: 0;
+                    margin-top: 10px;
+                }
+
             .section-title h2 {
                 font-size: 20px;
-                display: flex;
-                align-items: center;
-                gap: 8px;
-                justify-content: center;
             }
 
             .section-title p {
                 font-size: 13px;
             }
 
-            /* Fleet section mobile */
-            .fleet {
+            .services {
                 padding: 20px 16px;
             }
 
-            .cars-grid {
+            .services-grid {
                 grid-template-columns: 1fr;
                 gap: 12px;
             }
 
-            .car-card {
+            .service-card {
                 border-radius: 16px;
                 display: flex;
                 gap: 12px;
@@ -1220,29 +1303,25 @@
                 flex-direction: row;
             }
 
-            .car-image {
+            .service-image {
                 width: 100px;
                 height: 100px;
                 border-radius: 12px;
                 flex-shrink: 0;
-                background: linear-gradient(135deg, #e3f2fd 0%, #bbdefb 100%);
             }
 
-                .car-image img {
-                    width: 100%;
-                    height: 100%;
-                    object-fit: cover;
-                    border-radius: 12px;
+                .service-image i {
+                    font-size: 2.5rem;
                 }
 
-            .car-badge {
+            .service-badge {
                 top: 12px;
                 right: 12px;
                 padding: 4px 10px;
                 font-size: 10px;
             }
 
-            .car-info {
+            .service-info {
                 padding: 0;
                 flex: 1;
                 display: flex;
@@ -1250,27 +1329,23 @@
                 justify-content: space-between;
             }
 
-                .car-info h3 {
+                .service-info h3 {
                     font-size: 16px;
                     margin-bottom: 4px;
                 }
 
-            .car-specs {
-                gap: 12px;
+            .service-features {
+                gap: 4px;
                 font-size: 12px;
                 margin: 8px 0;
             }
 
-            .car-price {
+            .service-price {
                 margin: 0;
             }
 
             .price {
-                font-size: 22px;
-            }
-
-            .period {
-                font-size: 12px;
+                font-size: 20px;
             }
 
             .book-btn {
@@ -1280,7 +1355,46 @@
                 margin-top: 8px;
             }
 
-            /* Pricing mobile */
+            .routes {
+                padding: 20px 16px;
+            }
+
+            .routes-grid {
+                grid-template-columns: 1fr;
+                gap: 12px;
+            }
+
+            .route-card {
+                padding: 20px;
+                border-radius: 16px;
+            }
+
+                .route-card.popular::before {
+                    content: 'Phổ biến';
+                    font-size: 10px;
+                    padding: 4px 12px;
+                    top: -10px;
+                }
+
+            .route-header {
+                margin-bottom: 12px;
+            }
+
+            .route-icon {
+                width: 50px;
+                height: 50px;
+                font-size: 1.2rem;
+            }
+
+            .route-title h3 {
+                font-size: 16px;
+            }
+
+            .route-details li {
+                padding: 6px 0;
+                font-size: 13px;
+            }
+
             .pricing {
                 padding: 20px 16px;
             }
@@ -1304,50 +1418,21 @@
                 font-size: 13px;
             }
 
-            .pricing-grid {
-                grid-template-columns: 1fr;
-                gap: 12px;
+            .pricing-table {
+                border-radius: 12px;
+                overflow-x: auto;
             }
 
-            .pricing-card {
-                padding: 20px;
-                border-radius: 16px;
-            }
-
-                .pricing-card.featured {
-                    transform: none;
+                .pricing-table table {
+                    min-width: 600px;
                 }
 
-                    .pricing-card.featured::before {
-                        content: 'Phổ biến';
-                        font-size: 10px;
-                        padding: 4px 12px;
-                        top: -10px;
-                    }
-
-                .pricing-card h3 {
-                    font-size: 18px;
-                }
-
-            .price-tag {
-                font-size: 32px;
-                margin: 8px 0;
-            }
-
-                .price-tag span {
-                    font-size: 14px;
-                }
-
-            .features {
-                margin-top: 12px;
-            }
-
-                .features li {
-                    padding: 6px 0;
+                .pricing-table th,
+                .pricing-table td {
+                    padding: 12px;
                     font-size: 13px;
                 }
 
-            /* Location mobile */
             .location {
                 padding: 20px 16px;
             }
@@ -1381,7 +1466,6 @@
                 height: 250px;
             }
 
-            /* Booking mobile */
             .booking {
                 padding: 20px 16px;
                 margin-bottom: 100px;
@@ -1403,15 +1487,7 @@
 
                 .form-group label {
                     font-size: 14px;
-                    display: flex;
-                    align-items: center;
-                    gap: 6px;
                 }
-
-                    .form-group label i {
-                        color: var(--vinfast-blue);
-                        width: 16px;
-                    }
 
                 .form-group input,
                 .form-group select,
@@ -1434,7 +1510,6 @@
                 margin-top: 8px;
             }
 
-            /* Footer mobile */
             footer {
                 padding: 2rem 16px 100px;
             }
@@ -1444,7 +1519,6 @@
                 gap: 1.5rem;
             }
 
-            /* Floating buttons mobile */
             .floating-buttons {
                 bottom: 100px;
                 right: 20px;
@@ -1461,7 +1535,6 @@
                     display: none;
                 }
 
-            /* Success message mobile */
             .success-message {
                 padding: 24px;
                 border-radius: 16px;
@@ -1508,12 +1581,12 @@
                 grid-template-columns: 1fr;
             }
 
-            .pricing-card.featured {
-                transform: scale(1.02);
+            .services-grid {
+                grid-template-columns: repeat(2, 1fr);
             }
         }
-
     </style>
+    <base target="_blank">
     <base target="_blank">
 </head>
 <body>
@@ -1527,18 +1600,17 @@
     <header class="desktop-header">
         <div class="nav-container">
             <div class="logo">
-                <img src="https://i.ibb.co/7NXwdJp0/Logo-Vin-Fast.png" alt="VinFast Logo">
+                <i class="fas fa-taxi"></i>
                 <div class="logo-text-desktop">
-                    <div>VINFAST</div>
-                    <div>ĐÀ NẴNG</div>
+                    <div>TAXI ĐÀ NẴNG</div>
+                    <div>Chỉ Xe VinFast VF5 - Giá Rẻ Nhất</div>
                 </div>
             </div>
             <nav>
                 <ul>
                     <li><a href="#home">Trang chủ</a></li>
-                    <li><a href="#fleet">Dòng xe</a></li>
+                    <li><a href="#routes">Tuyến đường</a></li>
                     <li><a href="#pricing">Bảng giá</a></li>
-                    <li><a href="#location">Vị trí</a></li>
                     <li><a href="#booking">Đặt xe</a></li>
                 </ul>
             </nav>
@@ -1553,10 +1625,10 @@
     <header class="mobile-header">
         <div class="header-top">
             <div class="logo-mobile">
-                <img src="https://i.ibb.co/7NXwdJp0/Logo-Vin-Fast.png" alt="VinFast Logo">
+                <i class="fas fa-taxi"></i>
                 <div class="logo-text">
-                    VINFAST
-                    <span>Thuê Xe Điện Đà Nẵng</span>
+                    TAXI ĐÀ NẴNG
+                    <span>Chỉ Xe VF5 - Rẻ Nhất</span>
                 </div>
             </div>
             <a href="tel:0914372327" class="header-call">
@@ -1565,7 +1637,7 @@
         </div>
         <div class="quick-info">
             <span><i class="fas fa-phone"></i> 0914 372 327</span>
-            <span><i class="fas fa-clock"></i> 6:00 - 22:00</span>
+            <span><i class="fas fa-clock"></i> 24/7</span>
             <span><i class="fas fa-map-marker-alt"></i> Đà Nẵng</span>
         </div>
     </header>
@@ -1573,24 +1645,30 @@
     <!-- Hero Section -->
     <section class="hero" id="home">
         <div class="hero-content">
-            <h1>Thuê Xe Điện <span>VinFast</span><br class="mobile-only"> Tự Lái Đà Nẵng</h1>
-            <p>Trải nghiệm công nghệ xe điện hàng đầu Việt Nam. Tự do khám phá Đà Nẵng - Hội An - Quảng Nam với chi phí tối ưu, thủ tục đơn giản.</p>
-            <a href="#booking" class="cta-button">
-                <i class="fas fa-calendar-check"></i>
-                Đặt Xe Ngay
-            </a>
+            <h1>Taxi Đà Nẵng <span>2026</span><br class="mobile-only"> Giá Rẻ Nhất</h1>
+            <p>Đưa đón sân bay, du lịch Hội An, Bà Nà Hills, Huế. <strong>Chỉ dùng xe điện VinFast VF5</strong> - Sạch, êm, giá rẻ nhất 2026. Đặt xe online hoặc gọi ngay!</p>
+            <div>
+                <a href="#booking" class="cta-button">
+                    <i class="fas fa-calendar-check"></i>
+                    Đặt Xe Ngay
+                </a>
+                <a href="tel:0914372327" class="cta-button secondary mobile-only">
+                    <i class="fas fa-phone"></i>
+                    Gọi Điện
+                </a>
+            </div>
             <div class="hero-badges">
                 <div class="badge">
                     <i class="fas fa-shield-alt"></i>
-                    <span>Bảo hiểm 100%</span>
+                    <span>An toàn 100%</span>
                 </div>
                 <div class="badge">
-                    <i class="fas fa-charging-station"></i>
-                    <span>Sạc miễn phí</span>
+                    <i class="fas fa-tag"></i>
+                    <span>Giá rẻ nhất</span>
                 </div>
                 <div class="badge mobile-only">
                     <i class="fas fa-headset"></i>
-                    <span>Hỗ trợ 24/7</span>
+                    <span>24/7</span>
                 </div>
             </div>
         </div>
@@ -1603,7 +1681,7 @@
             <span class="stat-label">Xe sẵn sàng</span>
         </div>
         <div class="stat-item">
-            <span class="stat-number">1000+</span>
+            <span class="stat-number">10K+</span>
             <span class="stat-label">Khách hàng</span>
         </div>
         <div class="stat-item">
@@ -1612,345 +1690,248 @@
         </div>
     </div>
 
-    <!-- Fleet Section -->
-    <section class="fleet" id="fleet">
+    <!-- Services Section -->
+    <!-- Routes Section -->
+    <section class="routes" id="routes">
         <div class="container">
             <div class="section-title fade-in">
-                <h2><i class="fas fa-car mobile-only"></i> Đội Xe Của Chúng Tôi</h2>
-                <p>Đa dạng dòng xe VinFast điện phù hợp mọi nhu cầu di chuyển</p>
+                <h2><i class="fas fa-route mobile-only"></i> Tuyến Đường Phổ Biến 2026</h2>
+                <p>Bảng giá cước taxi các tuyến du lịch phổ biến</p>
             </div>
 
-            <!-- Ô TÔ ĐIỆN VINFAST -->
-            <div style="margin-bottom: 1.5rem;">
-                <h3 style="font-size: 1.5rem; color: var(--vinfast-blue); display: flex; align-items: center; gap: 10px; text-transform: uppercase; font-weight: 800;">
-                    <i class="fas fa-bolt"></i> Ô TÔ ĐIỆN VINFAST
-                </h3>
-            </div>
-
-            <div class="cars-grid">
-                <!-- VF3 -->
-                <div class="car-card fade-in">
-                    <div class="car-image">
-                        <span class="car-badge">Tiết kiệm</span>
-                        <img src="https://vinfastquangninh.com/wp-content/uploads/2024/05/VF3-vang.png" alt="VinFast VF 3">
-                    </div>
-                    <div class="car-info">
-                        <h3>VinFast VF 3</h3>
-                        <div class="car-specs">
-                            <span><i class="fas fa-user"></i> 4 chỗ</span>
-                            <span><i class="fas fa-battery-full"></i> 210 km</span>
+            <div class="routes-grid">
+                <!-- Sân bay -->
+                <div class="route-card popular fade-in">
+                    <div class="route-header">
+                        <div class="route-icon">
+                            <i class="fas fa-plane-arrival"></i>
                         </div>
-                        <p class="desktop-only" style="color: #666; font-size: 0.9rem; margin-bottom: 1rem;">Xe đô thị cỡ nhỏ, linh hoạt, phù hợp di chuyển trong thành phố.</p>
-                        <div class="car-price">
-                            <span class="price">550K</span>
-                            <span class="period">/ngày</span>
+                        <div class="route-title">
+                            <h3>Sân Bay Đà Nẵng</h3>
+                            <p>Đưa đón sân bay 24/7</p>
                         </div>
-                        <button class="book-btn" onclick="selectCar('VF3')">
-                            <i class="fas fa-calendar-plus"></i> Chọn Xe
-                        </button>
                     </div>
+                    <ul class="route-details">
+                        <li>
+                            <span><i class="fas fa-car"></i> VinFast VF5 (4 chỗ)</span>
+                            <span class="route-price">Chỉ 80K</span>
+                        </li>
+                        <li>
+                            <span><i class="fas fa-bolt"></i> Xe điện sạch, êm ái</span>
+                            <span class="route-price">Tiết kiệm 40%</span>
+                        </li>
+                    </ul>
+                    <button class="book-btn" onclick="selectRoute('sanbay')" style="margin-top: 1rem;">
+                        <i class="fas fa-calendar-check"></i> Đặt Xe Sân Bay
+                    </button>
                 </div>
 
-                <!-- VF5 Plus -->
-                <div class="car-card fade-in">
-                    <div class="car-image">
-                        <span class="car-badge" style="background: #28a745;">Phổ biến</span>
-                        <img src="https://vinfastquangninh.com/wp-content/uploads/2024/05/VF5-xanh-duong-nhat.png" alt="VinFast VF 5 Plus">
-                    </div>
-                    <div class="car-info">
-                        <h3>VinFast VF 5 Plus</h3>
-                        <div class="car-specs">
-                            <span><i class="fas fa-user"></i> 5 chỗ</span>
-                            <span><i class="fas fa-battery-full"></i> 300 km</span>
+                <!-- Hội An -->
+                <div class="route-card popular fade-in">
+                    <div class="route-header">
+                        <div class="route-icon">
+                            <i class="fas fa-umbrella-beach"></i>
                         </div>
-                        <p class="desktop-only" style="color: #666; font-size: 0.9rem; margin-bottom: 1rem;">SUV đô thị cỡ nhỏ, không gian rộng rãi, phù hợp gia đình.</p>
-                        <div class="car-price">
-                            <span class="price">750K</span>
-                            <span class="period">/ngày</span>
+                        <div class="route-title">
+                            <h3>Đà Nẵng - Hội An</h3>
+                            <p>30km - 45 phút di chuyển</p>
                         </div>
-                        <button class="book-btn" onclick="selectCar('VF5')">
-                            <i class="fas fa-calendar-plus"></i> Chọn Xe
-                        </button>
                     </div>
+                    <ul class="route-details">
+                        <li>
+                            <span><i class="fas fa-car"></i> VinFast VF5 (4 chỗ)</span>
+                            <span class="route-price">Chỉ 200K</span>
+                        </li>
+                        <li>
+                            <span><i class="fas fa-bolt"></i> Giá rẻ nhất 2026</span>
+                            <span class="route-price">Tiết kiệm 100K</span>
+                        </li>
+                    </ul>
+                    <button class="book-btn" onclick="selectRoute('hoian')" style="margin-top: 1rem;">
+                        <i class="fas fa-calendar-check"></i> Đặt Xe Đi Hội An
+                    </button>
                 </div>
 
-                <!-- VF6 -->
-                <div class="car-card fade-in">
-                    <div class="car-image">
-                        <span class="car-badge">Mới 2024</span>
-                        <img src="https://vinfastquangninh.com/wp-content/uploads/2024/05/VF6-xanh-la-nhat.png" alt="VinFast VF 6">
-                    </div>
-                    <div class="car-info">
-                        <h3>VinFast VF 6</h3>
-                        <div class="car-specs">
-                            <span><i class="fas fa-user"></i> 5 chỗ</span>
-                            <span><i class="fas fa-battery-full"></i> 400 km</span>
+                <!-- Bà Nà -->
+                <div class="route-card fade-in">
+                    <div class="route-header">
+                        <div class="route-icon">
+                            <i class="fas fa-mountain"></i>
                         </div>
-                        <p class="desktop-only" style="color: #666; font-size: 0.9rem; margin-bottom: 1rem;">SUV đô thị hiện đại, thiết kế trẻ trung, công nghệ tiên tiến.</p>
-                        <div class="car-price">
-                            <span class="price">950K</span>
-                            <span class="period">/ngày</span>
+                        <div class="route-title">
+                            <h3>Đà Nẵng - Bà Nà Hills</h3>
+                            <p>35km - 1 giờ di chuyển</p>
                         </div>
-                        <button class="book-btn" onclick="selectCar('VF6')">
-                            <i class="fas fa-calendar-plus"></i> Chọn Xe
-                        </button>
                     </div>
+                    <ul class="route-details">
+                        <li>
+                            <span><i class="fas fa-car"></i> VinFast VF5 (4 chỗ)</span>
+                            <span class="route-price">Chỉ 250K</span>
+                        </li>
+                        <li>
+                            <span><i class="fas fa-bolt"></i> Leo núi êm, không ồn</span>
+                            <span class="route-price">Xe điện tốt nhất</span>
+                        </li>
+                    </ul>
+                    <button class="book-btn" onclick="selectRoute('bana')" style="margin-top: 1rem;">
+                        <i class="fas fa-calendar-check"></i> Đặt Xe Đi Bà Nà
+                    </button>
                 </div>
 
-                <!-- VF7 -->
-                <div class="car-card fade-in">
-                    <div class="car-image">
-                        <img src="https://vinfastquangninh.com/wp-content/uploads/2024/05/VF7-1.png" alt="VinFast VF 7">
-                    </div>
-                    <div class="car-info">
-                        <h3>VinFast VF 7</h3>
-                        <div class="car-specs">
-                            <span><i class="fas fa-user"></i> 5 chỗ</span>
-                            <span><i class="fas fa-battery-full"></i> 450 km</span>
+                <!-- Huế -->
+                <div class="route-card fade-in">
+                    <div class="route-header">
+                        <div class="route-icon">
+                            <i class="fas fa-landmark"></i>
                         </div>
-                        <p class="desktop-only" style="color: #666; font-size: 0.9rem; margin-bottom: 1rem;">SUV cỡ C sang trọng, không gian rộng rãi, đẳng cấp.</p>
-                        <div class="car-price">
-                            <span class="price">1.1tr</span>
-                            <span class="period">/ngày</span>
+                        <div class="route-title">
+                            <h3>Đà Nẵng - Huế</h3>
+                            <p>100km - 2 giờ di chuyển</p>
                         </div>
-                        <button class="book-btn" onclick="selectCar('VF7')">
-                            <i class="fas fa-calendar-plus"></i> Chọn Xe
-                        </button>
                     </div>
+                    <ul class="route-details">
+                        <li>
+                            <span><i class="fas fa-car"></i> VinFast VF5 (4 chỗ)</span>
+                            <span class="route-price">Chỉ 700K</span>
+                        </li>
+                        <li>
+                            <span><i class="fas fa-bolt"></i> Đường dài tiết kiệm</span>
+                            <span class="route-price">Rẻ hơn 100K</span>
+                        </li>
+                    </ul>
+                    <button class="book-btn" onclick="selectRoute('hue')" style="margin-top: 1rem;">
+                        <i class="fas fa-calendar-check"></i> Đặt Xe Đi Huế
+                    </button>
                 </div>
 
-                <!-- VF8 -->
-                <div class="car-card fade-in">
-                    <div class="car-image">
-                        <span class="car-badge" style="background: #6f42c1;">Cao cấp</span>
-                        <img src="https://vinfastquangninh.com/wp-content/uploads/2024/05/vf8-1.png" alt="VinFast VF 8">
-                    </div>
-                    <div class="car-info">
-                        <h3>VinFast VF 8</h3>
-                        <div class="car-specs">
-                            <span><i class="fas fa-user"></i> 5 chỗ</span>
-                            <span><i class="fas fa-battery-full"></i> 500 km</span>
+                <!-- Động Phong Nha -->
+                <div class="route-card fade-in">
+                    <div class="route-header">
+                        <div class="route-icon">
+                            <i class="fas fa-water"></i>
                         </div>
-                        <p class="desktop-only" style="color: #666; font-size: 0.9rem; margin-bottom: 1rem;">SUV cỡ E cao cấp, trang bị full option, lái xe tự hành cấp độ 2.</p>
-                        <div class="car-price">
-                            <span class="price">1.5tr</span>
-                            <span class="period">/ngày</span>
+                        <div class="route-title">
+                            <h3>Đà Nẵng - Phong Nha</h3>
+                            <p>350km - 6 giờ di chuyển</p>
                         </div>
-                        <button class="book-btn" onclick="selectCar('VF8')">
-                            <i class="fas fa-calendar-plus"></i> Chọn Xe
-                        </button>
                     </div>
+                    <ul class="route-details">
+                        <li>
+                            <span><i class="fas fa-car"></i> VinFast VF5 (4 chỗ)</span>
+                            <span class="route-price">Chỉ 2.2tr</span>
+                        </li>
+                        <li>
+                            <span><i class="fas fa-bolt"></i> Tiết kiệm nhiên liệu</span>
+                            <span class="route-price">Rẻ hơn 300K</span>
+                        </li>
+                    </ul>
+                    <button class="book-btn" onclick="selectRoute('phongnha')" style="margin-top: 1rem;">
+                        <i class="fas fa-calendar-check"></i> Đặt Xe Đi Phong Nha
+                    </button>
                 </div>
 
-                <!-- VF9 -->
-                <div class="car-card fade-in">
-                    <div class="car-image">
-                        <span class="car-badge" style="background: #fd7e14;">Sang trọng</span>
-                        <img src="https://vinfastquangninh.com/wp-content/uploads/2024/05/vf9-2.png" alt="VinFast VF 9">
-                    </div>
-                    <div class="car-info">
-                        <h3>VinFast VF 9</h3>
-                        <div class="car-specs">
-                            <span><i class="fas fa-user"></i> 6-7 chỗ</span>
-                            <span><i class="fas fa-battery-full"></i> 594 km</span>
+                <!-- Tour riêng -->
+                <div class="route-card fade-in">
+                    <div class="route-header">
+                        <div class="route-icon">
+                            <i class="fas fa-map-marked-alt"></i>
                         </div>
-                        <p class="desktop-only" style="color: #666; font-size: 0.9rem; margin-bottom: 1rem;">SUV cỡ lớn 7 chỗ, không gian rộng nhất, phù hợp gia đình đông người.</p>
-                        <div class="car-price">
-                            <span class="price">2.0tr</span>
-                            <span class="period">/ngày</span>
+                        <div class="route-title">
+                            <h3>Tour Theo Yêu Cầu</h3>
+                            <p>Thiết kế riêng theo lịch trình</p>
                         </div>
-                        <button class="book-btn" onclick="selectCar('VF9')">
-                            <i class="fas fa-calendar-plus"></i> Chọn Xe
-                        </button>
                     </div>
-                </div>
-
-                <!-- VF e34 -->
-                <div class="car-card fade-in">
-                    <div class="car-image">
-                        <span class="car-badge" style="background: #00bcd4;">Classic</span>
-                        <img src="https://i.ibb.co/7dXTmr9t/vinfast-vfe34-3480-357-removebg-preview.png" alt="VinFast VF e34">
-                    </div>
-                    <div class="car-info">
-                        <h3>VinFast VF e34</h3>
-                        <div class="car-specs">
-                            <span><i class="fas fa-user"></i> 5 chỗ</span>
-                            <span><i class="fas fa-battery-full"></i> 285 km</span>
-                        </div>
-                        <p class="desktop-only" style="color: #666; font-size: 0.9rem; margin-bottom: 1rem;">SUV điện cỡ C đầu tiên của Việt Nam, đẳng cấp và tiện nghi.</p>
-                        <div class="car-price">
-                            <span class="price">800K</span>
-                            <span class="period">/ngày</span>
-                        </div>
-                        <button class="book-btn" onclick="selectCar('VFe34')">
-                            <i class="fas fa-calendar-plus"></i> Chọn Xe
-                        </button>
-                    </div>
-                </div>
-            </div>
-
-            <!-- DÒNG XE DỊCH VỤ -->
-            <div style="margin-top: 3rem; margin-bottom: 1.5rem;">
-                <h3 style="font-size: 1.5rem; color: var(--vinfast-blue); display: flex; align-items: center; gap: 10px; text-transform: uppercase; font-weight: 800;">
-                    <i class="fas fa-truck"></i> DÒNG XE DỊCH VỤ
-                </h3>
-            </div>
-
-            <div class="cars-grid">
-                <!-- MINIO GREEN -->
-                <div class="car-card fade-in">
-                    <div class="car-image">
-                        <span class="car-badge" style="background: #e91e63;">4 Chỗ</span>
-                        <img src="https://vinfastquangninh.com/wp-content/uploads/2025/03/minio_pink_gold_1.webp" alt="MINIO GREEN">
-                    </div>
-                    <div class="car-info">
-                        <h3>MINIO GREEN</h3>
-                        <div class="car-specs">
-                            <span><i class="fas fa-user"></i> 4 chỗ</span>
-                            <span><i class="fas fa-battery-full"></i> 180 km</span>
-                        </div>
-                        <p class="desktop-only" style="color: #666; font-size: 0.9rem; margin-bottom: 1rem;">Xe mini điện đa dụng, tiết kiệm, phù hợp giao hàng nhỏ.</p>
-                        <div class="car-price">
-                            <span class="price">650K</span>
-                            <span class="period">/ngày</span>
-                        </div>
-                        <button class="book-btn" onclick="selectCar('MINIO')">
-                            <i class="fas fa-calendar-plus"></i> Chọn Xe
-                        </button>
-                    </div>
-                </div>
-
-                <!-- LIMO GREEN -->
-                <div class="car-card fade-in">
-                    <div class="car-image">
-                        <span class="car-badge" style="background: #009688;">Limousine</span>
-                        <img src="https://vinfastquangninh.com/wp-content/uploads/2025/03/BGProductInfoAdvanced.webp" alt="LIMO GREEN">
-                    </div>
-                    <div class="car-info">
-                        <h3>LIMO GREEN</h3>
-                        <div class="car-specs">
-                            <span><i class="fas fa-user"></i> 9 chỗ</span>
-                            <span><i class="fas fa-battery-full"></i> 280 km</span>
-                        </div>
-                        <p class="desktop-only" style="color: #666; font-size: 0.9rem; margin-bottom: 1rem;">Xe limousine điện sang trọng, không gian rộng rãi, phù hợp đưa đón VIP.</p>
-                        <div class="car-price">
-                            <span class="price">1.2tr</span>
-                            <span class="period">/ngày</span>
-                        </div>
-                        <button class="book-btn" onclick="selectCar('LIMO')">
-                            <i class="fas fa-calendar-plus"></i> Chọn Xe
-                        </button>
-                    </div>
-                </div>
-
-                <!-- VAN EC -->
-                <div class="car-card fade-in">
-                    <div class="car-image">
-                        <span class="car-badge" style="background: #4caf50;">Van</span>
-                        <img src="https://i.ibb.co/b5zgyQnN/ecvan-jade.webp" alt="VAN EC">
-                    </div>
-                    <div class="car-info">
-                        <h3>VAN EC</h3>
-                        <div class="car-specs">
-                            <span><i class="fas fa-box"></i> Chở hàng</span>
-                            <span><i class="fas fa-battery-full"></i> 250 km</span>
-                        </div>
-                        <p class="desktop-only" style="color: #666; font-size: 0.9rem; margin-bottom: 1rem;">Xe tải van điện, khoang hàng rộng, kinh tế cho doanh nghiệp.</p>
-                        <div class="car-price">
-                            <span class="price">700K</span>
-                            <span class="period">/ngày</span>
-                        </div>
-                        <button class="book-btn" onclick="selectCar('VANEC')">
-                            <i class="fas fa-calendar-plus"></i> Chọn Xe
-                        </button>
-                    </div>
-                </div>
-
-                <!-- Herio Green -->
-                <div class="car-card fade-in">
-                    <div class="car-image">
-                        <span class="car-badge" style="background: #ff9800;">5 Chỗ</span>
-                        <img src="https://vinfast.danang.vn/wp-content/uploads/2025/03/herio-green-bac.webp" alt="Herio Green">
-                    </div>
-                    <div class="car-info">
-                        <h3>Herio Green</h3>
-                        <div class="car-specs">
-                            <span><i class="fas fa-user"></i> 5 chỗ</span>
-                            <span><i class="fas fa-battery-full"></i> 320 km</span>
-                        </div>
-                        <p class="desktop-only" style="color: #666; font-size: 0.9rem; margin-bottom: 1rem;">Xe đa dụng cỡ nhỏ, linh hoạt cho cả gia đình và công việc.</p>
-                        <div class="car-price">
-                            <span class="price">850K</span>
-                            <span class="period">/ngày</span>
-                        </div>
-                        <button class="book-btn" onclick="selectCar('HERIO')">
-                            <i class="fas fa-calendar-plus"></i> Chọn Xe
-                        </button>
-                    </div>
-                </div>
-
-                <!-- NERIO GREEN -->
-                <div class="car-card fade-in">
-                    <div class="car-image">
-                        <span class="car-badge" style="background: #9c27b0;">5 Chỗ</span>
-                        <img src="https://vinfasthadong.com.vn/wp-content/uploads/2025/05/Nerio-Green-mau-vang-1110x581-1.png" alt="NERIO GREEN">
-                    </div>
-                    <div class="car-info">
-                        <h3>NERIO GREEN</h3>
-                        <div class="car-specs">
-                            <span><i class="fas fa-user"></i> 5 chỗ</span>
-                            <span><i class="fas fa-battery-full"></i> 350 km</span>
-                        </div>
-                        <p class="desktop-only" style="color: #666; font-size: 0.9rem; margin-bottom: 1rem;">Xe SUV cỡ nhỏ đa dụng, thiết kế hiện đại, tiện nghi đầy đủ.</p>
-                        <div class="car-price">
-                            <span class="price">900K</span>
-                            <span class="period">/ngày</span>
-                        </div>
-                        <button class="book-btn" onclick="selectCar('NERIO')">
-                            <i class="fas fa-calendar-plus"></i> Chọn Xe
-                        </button>
-                    </div>
+                    <ul class="route-details">
+                        <li>
+                            <span><i class="fas fa-car"></i> VinFast VF5 (4 chỗ)</span>
+                            <span class="route-price">Chỉ 800K/ngày</span>
+                        </li>
+                        <li>
+                            <span><i class="fas fa-bolt"></i> Linh hoạt, tiết kiệm</span>
+                            <span class="route-price">Rẻ hơn 200K</span>
+                        </li>
+                    </ul>
+                    <button class="book-btn" onclick="selectRoute('tour')" style="margin-top: 1rem;">
+                        <i class="fas fa-calendar-check"></i> Đặt Tour Riêng
+                    </button>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Pricing Section -->
+    <!-- Pricing Section - VF5 Simple -->
     <section class="pricing" id="pricing">
         <div class="container">
             <div class="section-title fade-in">
-                <h2><i class="fas fa-tags mobile-only"></i> Bảng Giá Thuê Xe</h2>
-                <p>Ưu đãi hấp dẫn cho thuê dài hạn</p>
+                <h2><i class="fas fa-tags mobile-only"></i> Bảng Giá VF5 2026</h2>
+                <p>Giá rẻ nhất thị trường - Chỉ có xe điện VinFast VF5</p>
             </div>
 
-            <div class="pricing-tabs">
-                <button class="tab-btn active" onclick="switchTab('daily', this)">Theo Ngày</button>
-                <button class="tab-btn" onclick="switchTab('weekly', this)">Theo Tuần</button>
-                <button class="tab-btn" onclick="switchTab('monthly', this)">Theo Tháng</button>
-            </div>
-
-            <div class="pricing-grid" id="pricing-content">
-                <!-- Content loaded by JS -->
+            <div class="pricing-table fade-in" style="background: linear-gradient(135deg, #fff3e0 0%, #ffe0b2 100%); border: 2px solid var(--taxi-orange);">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Tuyến đường</th>
+                            <th style="text-align: center;">VinFast VF5 (4 chỗ)</th>
+                            <th style="text-align: center;">Tiết kiệm</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong><i class="fas fa-plane"></i> Sân bay Đà Nẵng</strong></td>
+                            <td class="price-highlight" style="text-align: center; font-size: 1.3rem;">80K</td>
+                            <td style="text-align: center; color: #28a745;"><i class="fas fa-arrow-down"></i> 40%</td>
+                        </tr>
+                        <tr>
+                            <td><strong><i class="fas fa-umbrella-beach"></i> Đà Nẵng - Hội An</strong></td>
+                            <td class="price-highlight" style="text-align: center; font-size: 1.3rem;">200K</td>
+                            <td style="text-align: center; color: #28a745;"><i class="fas fa-arrow-down"></i> 100K</td>
+                        </tr>
+                        <tr>
+                            <td><strong><i class="fas fa-mountain"></i> Đà Nẵng - Bà Nà</strong></td>
+                            <td class="price-highlight" style="text-align: center; font-size: 1.3rem;">250K</td>
+                            <td style="text-align: center; color: #28a745;"><i class="fas fa-arrow-down"></i> 100K</td>
+                        </tr>
+                        <tr>
+                            <td><strong><i class="fas fa-landmark"></i> Đà Nẵng - Huế</strong></td>
+                            <td class="price-highlight" style="text-align: center; font-size: 1.3rem;">700K</td>
+                            <td style="text-align: center; color: #28a745;"><i class="fas fa-arrow-down"></i> 100K</td>
+                        </tr>
+                        <tr>
+                            <td><strong><i class="fas fa-map-marked-alt"></i> Tour 1 ngày</strong></td>
+                            <td class="price-highlight" style="text-align: center; font-size: 1.3rem;">800K</td>
+                            <td style="text-align: center; color: #28a745;"><i class="fas fa-arrow-down"></i> 200K</td>
+                        </tr>
+                        <tr style="background: rgba(255,107,0,0.1);">
+                            <td colspan="3" style="text-align: center; padding: 20px;">
+                                <i class="fas fa-bolt" style="color: var(--taxi-orange);"></i>
+                                <strong>Xe điện VinFast VF5:</strong> Sạch, êm, không mùi xăng |
+                                <strong>4 chỗ</strong> |
+                                <strong>Giá rẻ nhất 2026</strong>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
             </div>
         </div>
     </section>
 
     <!-- Why Choose Us (Mobile) -->
     <section class="mobile-only" style="background: white; margin: 12px; border-radius: 16px; padding: 20px 16px; box-shadow: 0 2px 10px rgba(0,0,0,0.05);">
-        <h2 class="section-title-mobile" style="font-size: 20px; font-weight: 700; color: var(--vinfast-blue); margin-bottom: 16px; display: flex; align-items: center; gap: 8px;">
+        <h2 class="section-title-mobile" style="font-size: 20px; font-weight: 700; color: var(--taxi-orange); margin-bottom: 16px; display: flex; align-items: center; gap: 8px;">
             <i class="fas fa-star"></i>
             Tại Sao Chọn Chúng Tôi
         </h2>
         <div class="benefits-grid">
             <div class="benefit-item">
                 <i class="fas fa-shield-alt"></i>
-                <h4>Bảo Hiểm 100%</h4>
-                <p>An tâm mọi lúc</p>
+                <h4>An Toàn</h4>
+                <p>Tài xế chuyên nghiệp</p>
             </div>
             <div class="benefit-item">
-                <i class="fas fa-charging-station"></i>
-                <h4>Sạc Miễn Phí</h4>
-                <p>Tiết kiệm chi phí</p>
+                <i class="fas fa-tag"></i>
+                <h4>Giá Rẻ</h4>
+                <p>Không phụ thu giá</p>
             </div>
             <div class="benefit-item">
                 <i class="fas fa-headset"></i>
@@ -1958,9 +1939,9 @@
                 <p>Luôn sẵn sàng</p>
             </div>
             <div class="benefit-item">
-                <i class="fas fa-gas-pump"></i>
-                <h4>Không Xăng</h4>
-                <p>Thân thiện môi trường</p>
+                <i class="fas fa-clock"></i>
+                <h4>Đúng Giờ</h4>
+                <p>Đón đúng hẹn</p>
             </div>
         </div>
     </section>
@@ -1970,32 +1951,33 @@
         <div class="container">
             <div class="location-content">
                 <div class="location-info fade-in">
-                    <h2><i class="fas fa-map-marker-alt"></i> Vị Trí Thuận Lợi</h2>
-                    <p>Chúng tôi tọa lạc tại trung tâm thị trấn Đà Nẵng - cửa ngõ kết nối Đà Nẵng và các điểm du lịch nổi tiếng.</p>
-                    <p><strong>Địa chỉ:</strong> Đà Nẵng, Việt Nam</p>
-                    <p><strong>Giờ mở cửa:</strong> 6:00 - 22:00 hàng ngày</p>
+                    <h2><i class="fas fa-map-marker-alt"></i> Phục Vụ Toàn Đà Nẵng</h2>
+                    <p>Chúng tôi hoạt động khắp Đà Nẵng và các tỉnh thành lân cận. Đón xe mọi lúc mọi nơi trong thành phố.</p>
+                    <p><strong>Hotline:</strong> 0914 372 327 (24/7)</p>
+                    <p><strong>Địa chỉ:</strong> Trung tâm Đà Nẵng, Việt Nam</p>
+                    <p><strong>Email:</strong> taxi.danang2026@gmail.com</p>
 
                     <div class="location-features">
                         <div class="location-feature">
                             <i class="fas fa-plane"></i>
-                            <span>Cách sân bay Đà Nẵng 45 phút</span>
+                            <span>Sân bay Đà Nẵng</span>
                         </div>
                         <div class="location-feature">
                             <i class="fas fa-train"></i>
-                            <span>Gần sân bay Đà Nẵng 10 phút</span>
+                            <span>Ga Đà Nẵng</span>
                         </div>
                         <div class="location-feature">
-                            <i class="fas fa-umbrella-beach"></i>
-                            <span>Cách biển Mỹ Khê 5 phút</span>
+                            <i class="fas fa-bus"></i>
+                            <span>Bến xe trung tâm</span>
                         </div>
                         <div class="location-feature">
-                            <i class="fas fa-charging-station"></i>
-                            <span>Trạm sạc VinFast gần nhất 2km</span>
+                            <i class="fas fa-hotel"></i>
+                            <span>Khách sạn toàn thành phố</span>
                         </div>
                     </div>
                 </div>
                 <div class="map-container fade-in">
-                    <iframe src="https://www.google.com/maps/embed?origin=mfe&pb=!1m2!2m1!1zMTQ2IMSQ4bq3bmcgSMOyYSwgSG_DoCBDaMOidSwgSG_DoCBWYW5nLCDEkMOgIE7hurVuZw" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d4589.379641225156!2d108.20152257579132!3d15.997728741346616!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31421a4789c19b5b%3A0x2d6366775545526!2zMTQ2IMSQ4bq3bmcgSMOyYSwgSG_DoCBDaMOidSwgSMOyYSBYdcOibiwgxJDDoCBO4bq1bmcgNTUwMDAwLCBWaeG7h3QgTmFt!5e1!3m2!1svi!2s!4v1774611068449!5m2!1svi!2s">
                     </iframe>
                 </div>
             </div>
@@ -2007,7 +1989,7 @@
         <div class="container">
             <div class="section-title fade-in">
                 <h2><i class="fas fa-calendar-check mobile-only"></i> Đặt Xe Ngay</h2>
-                <p>Điền thông tin để nhận báo giá chi tiết và ưu đãi đặc biệt</p>
+                <p>Điền thông tin để nhận báo giá và xác nhận đặt xe trong 5 phút</p>
             </div>
 
             <form class="booking-form fade-in" id="bookingForm" onsubmit="handleBooking(event)">
@@ -2027,55 +2009,29 @@
                         <input type="email" name="email" id="email" placeholder="example@gmail.com">
                     </div>
 
-                    <!-- ✅ ĐÃ SỬA: Thêm đầy đủ các dòng xe -->
                     <div class="form-group">
-                        <label><i class="fas fa-car"></i> Chọn dòng xe *</label>
-                        <select name="car" id="carSelect" required>
-                            <option value="">-- Chọn xe --</option>
-                            <optgroup label="Ô TÔ ĐIỆN VINFAST">
-                                <option value="VF3">VinFast VF 3 - 550K/ngày</option>
-                                <option value="VF5">VinFast VF 5 Plus - 750K/ngày</option>
-                                <option value="VF6">VinFast VF 6 - 950K/ngày</option>
-                                <option value="VF7">VinFast VF 7 - 1.1tr/ngày</option>
-                                <option value="VF8">VinFast VF 8 - 1.5tr/ngày</option>
-                                <option value="VF9">VinFast VF 9 - 2.0tr/ngày</option>
-                                <option value="VFe34">VinFast VF e34 - 800K/ngày</option>
-                            </optgroup>
-                            <optgroup label="DÒNG XE DỊCH VỤ">
-                                <option value="MINIO">MINIO GREEN (4 chỗ) - 650K/ngày</option>
-                                <option value="LIMO">LIMO GREEN (9 chỗ) - 1.2tr/ngày</option>
-                                <option value="VANEC">VAN EC (Chở hàng) - 700K/ngày</option>
-                                <option value="HERIO">Herio Green (5 chỗ) - 850K/ngày</option>
-                                <option value="NERIO">NERIO GREEN (5 chỗ) - 900K/ngày</option>
-                            </optgroup>
-                        </select>
+                        <label><i class="fas fa-calendar"></i> Ngày đi *</label>
+                        <input type="date" name="date" id="date" required>
                     </div>
 
-                    <div class="form-group form-row-mobile">
-                        <div>
-                            <label><i class="fas fa-calendar"></i> Ngày nhận xe *</label>
-                            <input type="date" name="pickup" id="pickup" required>
-                        </div>
-                        <div>
-                            <label><i class="fas fa-calendar-check"></i> Ngày trả xe *</label>
-                            <input type="date" name="return" id="return" required>
-                        </div>
+                    <div class="form-group">
+                        <label><i class="fas fa-clock"></i> Giờ đón *</label>
+                        <input type="time" name="time" id="time" required value="08:00">
                     </div>
 
-                    <div class="form-group desktop-only">
-                        <label><i class="fas fa-clock"></i> Giờ nhận xe</label>
-                        <input type="time" name="time" id="time" value="08:00">
-                    </div>
-
-                    <!-- ✅ ĐÃ SỬA: Địa điểm giao xe thành input text -->
                     <div class="form-group full-width">
-                        <label><i class="fas fa-map-marker-alt"></i> Địa điểm giao xe *</label>
-                        <input type="text" name="location" id="location" required placeholder="100 Trần Tử Bình, Đà Nẵng">
+                        <label><i class="fas fa-map-marker-alt"></i> Điểm đón *</label>
+                        <input type="text" name="pickup" id="pickup" required placeholder="Sân bay Đà Nẵng, khách sạn, địa chỉ...">
+                    </div>
+
+                    <div class="form-group full-width">
+                        <label><i class="fas fa-flag-checkered"></i> Điểm đến *</label>
+                        <input name="destination" id="destination" required placeholder="Sân bay Đà Nẵng, khách sạn, địa chỉ..." style="width: 100%; padding: 1rem; border: 2px solid #e0e0e0; border-radius: 10px; font-family: inherit; font-size: 15px">
                     </div>
 
                     <div class="form-group full-width">
                         <label><i class="fas fa-comment"></i> Ghi chú thêm</label>
-                        <textarea name="note" id="note" rows="3" placeholder="Yêu cầu đặc biệt, số chuyến bay, v.v..."></textarea>
+                        <textarea name="note" id="note" rows="3" placeholder="Số chuyến bay, yêu cầu đặc biệt, số người đi..."></textarea>
                     </div>
 
                     <button type="submit" class="submit-btn" id="submitBtn">
@@ -2088,7 +2044,7 @@
             <div class="success-message" id="successMessage">
                 <i class="fas fa-check-circle"></i>
                 <h3>Đặt Xe Thành Công!</h3>
-                <p>Cảm ơn bạn đã đặt xe. Chúng tôi đã nhận được yêu cầu và sẽ liên hệ xác nhận trong vòng 15 phút.</p>
+                <p>Cảm ơn bạn đã đặt xe. Chúng tôi sẽ liên hệ xác nhận trong vòng 5 phút.</p>
                 <p style="margin-top: 1rem; font-size: 0.9rem;">Mã đơn: <strong id="orderId"></strong></p>
                 <div class="order-id-mobile mobile-only" id="orderIdMobile"></div>
             </div>
@@ -2100,7 +2056,7 @@
         <div class="footer-content">
             <div class="footer-section">
                 <h3>Về Chúng Tôi</h3>
-                <p>VinFast Đà Nẵng - Đơn vị cho thuê xe điện tự lái hàng đầu khu vực Quảng Nam - Đà Nẵng. Cam kết mang đến trải nghiệm di chuyển xanh, tiện nghi và an toàn.</p>
+                <p>Taxi Đà Nẵng 2026 - Dịch vụ taxi uy tín hàng đầu Đà Nẵng. Chuyên đưa đón sân bay, du lịch, tour tham quan với giá cả hợp lý, phục vụ tận tình.</p>
                 <div class="social-links">
                     <a href="#"><i class="fab fa-facebook-f"></i></a>
                     <a href="#"><i class="fab fa-zalo" style="font-style: normal; font-weight: bold;">Z</i></a>
@@ -2111,33 +2067,33 @@
 
             <div class="footer-section">
                 <h3>Liên Hệ</h3>
-                <p><i class="fas fa-map-marker-alt"></i> 123 Trần Phú, Đà Nẵng</p>
+                <p><i class="fas fa-map-marker-alt"></i> Trung tâm Đà Nẵng</p>
                 <p><i class="fas fa-phone"></i> Hotline: 0914 372 327</p>
-                <p><i class="fas fa-envelope"></i> Email: tranlam236@gmail.com</p>
-                <p><i class="fas fa-clock"></i> Giờ làm việc: 6:00 - 22:00</p>
+                <p><i class="fas fa-envelope"></i> taxi.danang2026@gmail.com</p>
+                <p><i class="fas fa-clock"></i> Hoạt động: 24/7</p>
             </div>
 
             <div class="footer-section">
                 <h3>Dịch Vụ</h3>
-                <p><a href="#">Thuê xe theo ngày</a></p>
-                <p><a href="#">Thuê xe dài hạn</a></p>
-                <p><a href="#">Dịch vụ doanh nghiệp</a></p>
-                <p><a href="#">Đưa đón sân bay</a></p>
-                <p><a href="#">Tour du lịch</a></p>
+                <p><a href="#">Taxi sân bay Đà Nẵng</a></p>
+                <p><a href="#">Đà Nẵng - Hội An</a></p>
+                <p><a href="#">Đà Nẵng - Bà Nà Hills</a></p>
+                <p><a href="#">Đà Nẵng - Huế</a></p>
+                <p><a href="#">Tour du lịch theo yêu cầu</a></p>
             </div>
 
             <div class="footer-section">
                 <h3>Hỗ Trợ</h3>
                 <p><a href="#">Câu hỏi thường gặp</a></p>
-                <p><a href="#">Chính sách thuê xe</a></p>
-                <p><a href="#">Hướng dẫn sử dụng</a></p>
+                <p><a href="#">Chính sách đặt xe</a></p>
+                <p><a href="#">Hướng dẫn đặt xe</a></p>
                 <p><a href="#">Điều khoản dịch vụ</a></p>
-                <p><a href="#">Chính sách bảo mật</a></p>
+                <p><a href="#">Chính sách hoàn tiền</a></p>
             </div>
         </div>
 
         <div class="footer-bottom">
-            <p>&copy; 2024 VinFast Đà Nẵng. All rights reserved. | Designed for Green Mobility</p>
+            <p>&copy; 2026 Taxi Đà Nẵng. All rights reserved. | Giấy phép kinh doanh số: 0123456789</p>
         </div>
     </footer>
 
@@ -2146,7 +2102,7 @@
         <a href="https://zalo.me/0914372327" target="_blank" class="floating-btn zalo-btn" data-tooltip="Chat Zalo">
             <img src="https://i.ibb.co/YTkypfNw/Zalo.png" alt="Zalo">
         </a>
-        <a href="https://www.messenger.com/e2ee/t/8312555842105869" target="_blank" class="floating-btn messenger-btn" data-tooltip="Messenger">
+        <a href="https://www.messenger.com/" target="_blank" class="floating-btn messenger-btn" data-tooltip="Messenger">
             <svg viewBox="0 0 24 24" fill="white" style="width: 32px; height: 32px;">
                 <path d="M12,2C6.48,2,2,6.03,2,11c0,2.64,1.34,4.99,3.44,6.55V22l4.04-2.24C10.02,19.92,10.99,20,12,20c5.52,0,10-4.03,10-9 S17.52,2,12,2z M13.07,14.35l-2.55-2.73L6.5,14.35l4.01-4.26l2.6,2.73l3.97-2.73L13.07,14.35z" />
             </svg>
@@ -2164,9 +2120,9 @@
             <i class="fas fa-home"></i>
             <span>Trang chủ</span>
         </a>
-        <a href="#fleet" class="nav-item">
-            <i class="fas fa-car"></i>
-            <span>Xe</span>
+        <a href="#routes" class="nav-item">
+            <i class="fas fa-route"></i>
+            <span>Tuyến</span>
         </a>
         <a href="#booking" class="nav-item book-now">
             <i class="fas fa-calendar-plus"></i>
@@ -2183,51 +2139,11 @@
     </nav>
 
     <script>
-        // Google Apps Script URL
-        const GOOGLE_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbxGm41GK03PxTzkJyKoVLzLno8YRLVjzPmBf6Qjd60P0GHVmkZqjHdiMFobl_7P13u8WA/exec';
-
-        // Pricing Data - GIẢM GIÁ 10-15%
-        const pricingData = {
-            daily: [
-                { name: 'VF 5 Plus', price: '750K', period: '/ngày', featured: true, features: ['Bảo hiểm toàn diện', 'Sạc pin không giới hạn', 'GPS miễn phí', 'Giới hạn 400km/ngày'] },
-                { name: 'VF 6', price: '950K', period: '/ngày', featured: false, features: ['Bảo hiểm toàn diện', 'Sạc pin không giới hạn', 'Camera hành trình', 'Giới hạn 400km/ngày'] },
-                { name: 'VF 7', price: '1.1tr', period: '/ngày', featured: false, features: ['Bảo hiểm toàn diện', 'Sạc pin không giới hạn', 'Camera hành trình', 'Không giới hạn km'] },
-                { name: 'VF 8', price: '1.5tr', period: '/ngày', featured: false, features: ['Bảo hiểm toàn diện', 'Sạc pin không giới hạn', 'Camera 360', 'Không giới hạn km'] },
-                { name: 'VF 9', price: '2.0tr', period: '/ngày', featured: false, features: ['Bảo hiểm toàn diện', 'Sạc pin không giới hạn', 'Camera 360', 'Không giới hạn km'] },
-                { name: 'VF e34', price: '900K', period: '/ngày', featured: false, features: ['Bảo hiểm toàn diện', 'Sạc pin không giới hạn', 'Camera hành trình', 'Không giới hạn km'] }
-            ],
-            weekly: [
-                { name: 'VF 5 Plus', price: '4.9tr', period: '/tuần', featured: true, features: ['Giảm 7%', 'Bảo hiểm toàn diện', 'GPS miễn phí', 'Sạc không giới hạn'] },
-                { name: 'VF 6', price: '6.2tr', period: '/tuần', featured: false, features: ['Giảm 7%', 'Bảo hiểm toàn diện', 'Camera hành trình', 'Sạc không giới hạn'] },
-                { name: 'VF 7', price: '7.2tr', period: '/tuần', featured: false, features: ['Giảm 7%', 'Bảo hiểm toàn diện', 'Camera hành trình', 'Không giới hạn km'] },
-                { name: 'VF 8', price: '9.8tr', period: '/tuần', featured: false, features: ['Giảm 7%', 'Bảo hiểm toàn diện', 'Camera 360', 'Không giới hạn km'] },
-                { name: 'VF 9', price: '13tr', period: '/tuần', featured: false, features: ['Giảm 7%', 'Bảo hiểm toàn diện', 'Camera 360', 'Không giới hạn km'] },
-                { name: 'VF e34', price: '5.9tr', period: '/tuần', featured: false, features: ['Giảm 7%', 'Bảo hiểm toàn diện', 'Camera hành trình', 'Không giới hạn km'] }
-            ],
-            monthly: [
-                { name: 'VF 5 Plus', price: '18tr', period: '/tháng', featured: true, features: ['Giảm 20%', 'Thay lốp miễn phí', 'Bảo hiểm toàn diện', 'Sạc không giới hạn'] },
-                { name: 'VF 6', price: '23tr', period: '/tháng', featured: false, features: ['Giảm 20%', 'Thay lốp miễn phí', 'Bảo hiểm toàn diện', 'Sạc không giới hạn'] },
-                { name: 'VF 7', price: '26tr', period: '/tháng', featured: false, features: ['Giảm 20%', 'Thay lốp miễn phí', 'Bảo hiểm toàn diện', 'Không giới hạn km'] },
-                { name: 'VF 8', price: '36tr', period: '/tháng', featured: false, features: ['Giảm 20%', 'Thay lốp miễn phí', 'Bảo hiểm toàn diện', 'Không giới hạn km'] },
-                { name: 'VF 9', price: '48tr', period: '/tháng', featured: false, features: ['Giảm 20%', 'Thay lốp miễn phí', 'Bảo hiểm toàn diện', 'Không giới hạn km'] },
-                { name: 'VF e34', price: '22tr', period: '/tháng', featured: false, features: ['Giảm 18%', 'Thay lốp miễn phí', 'Bảo hiểm toàn diện', 'Không giới hạn km'] }
-            ]
-        };
-
         // Initialize
         document.addEventListener('DOMContentLoaded', function () {
-            // Set min date
+            // Set min date to today
             const today = new Date().toISOString().split('T')[0];
-            document.getElementById('pickup').min = today;
-            document.getElementById('return').min = today;
-
-            // Load initial pricing
-            renderPricing('daily');
-
-            // Update return date min when pickup changes
-            document.getElementById('pickup').addEventListener('change', function () {
-                document.getElementById('return').min = this.value;
-            });
+            document.getElementById('date').min = today;
 
             // Scroll animation observer
             const observerOptions = {
@@ -2249,54 +2165,33 @@
             updateActiveNav();
         });
 
-        // Render Pricing
-        function renderPricing(period) {
-            const container = document.getElementById('pricing-content');
-            const data = pricingData[period];
+        // Select Route
+        function selectRoute(route) {
+            const routeDestinations = {
+                'sanbay': 'Sân bay Đà Nẵng',
+                'hoian': 'Hội An',
+                'bana': 'Bà Nà Hills',
+                'hue': 'Huế',
+                'phongnha': 'Động Phong Nha',
+                'tour': 'Tour theo yêu cầu'
+            };
 
-            container.innerHTML = data.map((item, index) => `
-                                            <div class="pricing-card ${item.featured ? 'featured' : ''} fade-in visible" style="animation-delay: ${index * 0.1}s">
-                                                <h3>${item.name}</h3>
-                                                <div class="price-tag">${item.price} <span>${item.period}</span></div>
-                                                <ul class="features">
-                                                    ${item.features.map(f => `<li><i class="fas fa-check"></i> ${f}</li>`).join('')}
-                                                </ul>
-                                            </div>
-                                        `).join('');
-        }
-
-        // Switch Tab
-        function switchTab(period, btn) {
-            document.querySelectorAll('.tab-btn').forEach(t => t.classList.remove('active'));
-            btn.classList.add('active');
-            renderPricing(period);
-        }
-
-        // Select Car
-        function selectCar(carModel) {
-            document.getElementById('carSelect').value = carModel;
+            document.getElementById('destination').value = routeDestinations[route] || '';
             document.getElementById('booking').scrollIntoView({ behavior: 'smooth' });
 
             // Highlight effect
-            const select = document.getElementById('carSelect');
-            select.style.borderColor = '#E31937';
+            const input = document.getElementById('destination');
+            input.style.borderColor = '#FF6B00';
+            input.style.boxShadow = '0 0 0 3px rgba(255,107,0,0.2)';
             setTimeout(() => {
-                select.style.borderColor = '';
+                input.style.borderColor = '';
+                input.style.boxShadow = '';
             }, 1000);
         }
 
         // Handle Booking
         async function handleBooking(e) {
             e.preventDefault();
-
-            const pickup = new Date(document.getElementById('pickup').value);
-            const returnDate = new Date(document.getElementById('return').value);
-            const days = Math.ceil((returnDate - pickup) / (1000 * 60 * 60 * 24));
-
-            if (days < 1) {
-                alert('Vui lòng chọn ngày trả xe sau ngày nhận xe!');
-                return;
-            }
 
             const loadingOverlay = document.getElementById('loadingOverlay');
             const submitBtn = document.getElementById('submitBtn');
@@ -2305,21 +2200,27 @@
             submitBtn.disabled = true;
             submitBtn.classList.add('loading');
 
+            // Generate order ID
+            const orderId = 'TX' + Date.now().toString().slice(-8);
+
             const formData = {
                 name: document.getElementById('name').value,
                 phone: document.getElementById('phone').value,
                 email: document.getElementById('email')?.value || '',
-                car: document.getElementById('carSelect').value,
+                car: 'vf5',  // ✅ Hardcode
+                carText: 'VinFast VF5 (4 chỗ)',  // ✅ Hardcode
+                date: document.getElementById('date').value,
+                time: document.getElementById('time').value,
                 pickup: document.getElementById('pickup').value,
-                return: document.getElementById('return').value,
-                days: days,
-                location: document.getElementById('location').value,
+                destination: document.getElementById('destination').value,
                 note: document.getElementById('note').value,
-                timestamp: new Date().toLocaleString('vi-VN'),
-                orderId: 'VF' + Date.now().toString().slice(-8)
+                orderId: orderId,
+                timestamp: new Date().toLocaleString('vi-VN')
             };
 
             try {
+                // Simulate API call - Replace with your actual Google Apps Script URL
+                const GOOGLE_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbwHj45XUkh-w0Y2DqvFhF9UU6CI50-T2rlWJnam5_K3_JwiI5Ktkhn7vP9BBlgGkKPI4g/exec';
                 await fetch(GOOGLE_SCRIPT_URL, {
                     method: 'POST',
                     body: JSON.stringify(formData),
@@ -2327,6 +2228,10 @@
                     mode: 'no-cors'
                 });
 
+                // Simulate delay
+                await new Promise(resolve => setTimeout(resolve, 1500));
+
+                // Show success message
                 document.getElementById('orderId').textContent = formData.orderId;
                 document.getElementById('orderIdMobile').textContent = formData.orderId;
                 document.getElementById('successMessage').classList.add('show');
@@ -2334,6 +2239,9 @@
 
                 // Scroll to success message
                 document.getElementById('successMessage').scrollIntoView({ behavior: 'smooth', block: 'center' });
+
+                // Optional: Send to WhatsApp/Zalo
+                sendToWhatsApp(formData);
 
             } catch (error) {
                 console.error('Error:', error);
@@ -2343,6 +2251,26 @@
                 submitBtn.disabled = false;
                 submitBtn.classList.remove('loading');
             }
+        }
+
+        // Send to WhatsApp
+        function sendToWhatsApp(data) {
+            const message = `*ĐẶT XE MỚI - ${data.orderId}*%0A%0A` +
+                `*Họ tên:* ${data.name}%0A` +
+                `*SĐT:* ${data.phone}%0A` +
+                `*Loại xe:* ${data.carText}%0A` +
+                `*Ngày đi:* ${data.date}%0A` +
+                `*Giờ đón:* ${data.time}%0A` +
+                `*Điểm đón:* ${data.pickup}%0A` +
+                `*Điểm đến:* ${data.destination}%0A` +
+                `*Ghi chú:* ${data.note || 'Không có'}`;
+
+            const whatsappUrl = `https://wa.me/84914372327?text=${message}`;
+
+            // Open WhatsApp in new tab after 2 seconds
+            setTimeout(() => {
+                window.open(whatsappUrl, '_blank');
+            }, 2000);
         }
 
         // Update Active Nav
@@ -2378,38 +2306,31 @@
                 }
             });
         });
+
     </script>
 
-    <!-- Chat widget -->
-    <script type="text/javascript">
-        Tawk_API = Tawk_API || {};
-        Tawk_API.onLoad = function () {
-            var style = document.createElement('style');
-            style.innerHTML = `
-#tawkchat-container,
-.tawk-min-container,
-.tawk-button-circle,
-iframe[title*="chat widget"],
-iframe[title*="Tawk"],
-iframe[src*="tawk.to"] {
-left: 20px !important;
-right: auto !important;
-}
-`;
-            document.head.appendChild(style);
-        };
-    </script>
-
+    <!-- Chat widget (Optional - Tawk.to) -->
     <script type="text/javascript">
         var Tawk_API = Tawk_API || {}, Tawk_LoadStart = new Date();
         (function () {
             var s1 = document.createElement("script"), s0 = document.getElementsByTagName("script")[0];
             s1.async = true;
-            s1.src = 'https://embed.tawk.to/69bbe15cf1726d1c37ecf371/1jk2ugkm8';
+            s1.src = 'https://embed.tawk.to/YOUR_PROPERTY_ID/default';
             s1.charset = 'UTF-8';
             s1.setAttribute('crossorigin', '*');
             s0.parentNode.insertBefore(s1, s0);
         })();
+    </script>
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-857483429">
+    </script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'AW-857483429');
     </script>
 
 </body>
